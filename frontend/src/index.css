@@ -4,30 +4,55 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-800 antialiased;
+    @apply bg-[#FAFAFB] text-[#222222] antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-bold text-slate-900;
+    @apply tracking-tight font-bold text-[#111111];
   }
 }
 
-/* Article rich typography - Zoho Blog inspired clean corporate aesthetic */
+/* Zoho Blog signature styling */
+.zoho-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.zoho-tag-red {
+  background-color: #fef2f2;
+  color: #E42528;
+  border: 1px solid #fecaca;
+}
+
+.zoho-tag-blue {
+  background-color: #eff6ff;
+  color: #0F65AF;
+  border: 1px solid #bfdbfe;
+}
+
+.zoho-tag-green {
+  background-color: #f0fdf4;
+  color: #009639;
+  border: 1px solid #bbf7d0;
+}
+
+/* Article rich typography - Zoho Blog clean corporate aesthetic */
 .article-prose {
-  @apply text-slate-700 leading-relaxed text-lg;
+  @apply text-[#333333] leading-relaxed text-[17px];
 }
 
 .article-prose p {
-  @apply mb-6 leading-8;
+  @apply mb-6 leading-[1.8];
 }
 
 .article-prose h2 {
-  @apply text-2xl sm:text-3xl font-extrabold text-slate-900 mt-10 mb-4 pb-2 border-b border-slate-200 scroll-mt-24;
+  @apply text-2xl sm:text-3xl font-extrabold text-[#111111] mt-10 mb-4 pb-2 border-b border-slate-200 scroll-mt-24;
 }
 
 .article-prose h3 {
-  @apply text-xl sm:text-2xl font-bold text-slate-800 mt-8 mb-3 scroll-mt-24;
+  @apply text-xl sm:text-2xl font-bold text-[#111111] mt-8 mb-3 scroll-mt-24;
 }
 
 .article-prose ul {
@@ -39,19 +64,19 @@
 }
 
 .article-prose li strong {
-  @apply text-slate-900 font-semibold;
+  @apply text-[#111111] font-semibold;
 }
 
 .article-prose blockquote {
-  @apply my-8 pl-6 border-l-4 border-brand-500 italic text-slate-700 bg-brand-50/60 py-4 pr-4 rounded-r-lg;
+  @apply my-8 pl-6 border-l-4 border-[#E42528] italic text-slate-700 bg-[#fef8f8] py-4 pr-4 rounded-r-lg;
 }
 
 .article-prose pre {
-  @apply bg-slate-900 text-slate-100 p-5 rounded-xl my-6 overflow-x-auto text-sm font-mono border border-slate-800 shadow-md;
+  @apply bg-[#1e2430] text-slate-100 p-5 rounded-xl my-6 overflow-x-auto text-sm font-mono border border-slate-700 shadow-sm;
 }
 
 .article-prose code:not(pre code) {
-  @apply bg-slate-100 text-brand-700 font-mono text-sm px-1.5 py-0.5 rounded border border-slate-200;
+  @apply bg-slate-100 text-[#E42528] font-mono text-sm px-1.5 py-0.5 rounded border border-slate-200;
 }
 
 .article-prose table {
@@ -75,4 +100,3 @@
 html {
   scroll-behavior: smooth;
 }
-

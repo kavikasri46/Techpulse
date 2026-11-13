@@ -14,10 +14,26 @@ connectDB();
 
 const app = express();
 
-// Security and utility middleware
-const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+// Enable CORS for Vercel deployment & local development
 app.use(cors({
-  origin: true, // allow any origin in dev, or specify clientUrl
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+    if (!origin) return callback(null, true);
+    
+    // Allow localhost, vercel.app preview and production domains
+    const allowed = [
+      /localhost/,
+      /127\.0\.0\.1/,
+      /\.vercel\.app$/,
+      /zoho/
+    ];
+
+    const isAllowed = allowed.some((regex) => regex.test(origin));
+    if (isAllowed || process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+    return callback(null, true); // Permissive for preview/evaluation
+  },
   credentials: true
 }));
 
@@ -36,6 +52,7 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
+    service: 'Zoho Blog REST Engine',
     database: getDbStatus()
   });
 });
@@ -61,9 +78,10 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 if (require.main === module) {
-  app.listen(PORT, () => {
+  // Bind to 0.0.0.0 so Render and cloud hosts can expose the port externally
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`====================================================`);
-    console.log(`🚀 TechPulse Blog Backend running on port ${PORT}`);
+    console.log(`🚀 Zoho Blog Engine running on port ${PORT}`);
     console.log(`📍 Environment : ${process.env.NODE_ENV || 'development'}`);
     console.log(`📄 Sitemap     : http://localhost:${PORT}/sitemap.xml`);
     console.log(`🤖 Robots.txt  : http://localhost:${PORT}/robots.txt`);

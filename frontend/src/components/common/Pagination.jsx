@@ -28,10 +28,10 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none transition"
+        className="flex items-center gap-1 px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-md text-slate-700 bg-white border border-[#E5E7EB] hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none transition"
       >
         <ChevronLeft className="w-4 h-4" />
-        <span className="hidden sm:inline">Previous</span>
+        <span className="hidden sm:inline">Prev</span>
       </button>
 
       {/* Number Buttons */}
@@ -49,10 +49,10 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
           <button
             key={`page-${item}`}
             onClick={() => onPageChange(item)}
-            className={`w-9 h-9 rounded-lg text-sm font-semibold transition ${
+            className={`w-9 h-9 rounded-md text-xs font-bold transition ${
               isActive
-                ? 'bg-brand-600 text-white shadow-sm'
-                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
+                ? 'bg-[#E42528] text-white shadow-2xs'
+                : 'bg-white text-slate-700 border border-[#E5E7EB] hover:bg-slate-50'
             }`}
           >
             {item}
@@ -64,7 +64,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none transition"
+        className="flex items-center gap-1 px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-md text-slate-700 bg-white border border-[#E5E7EB] hover:bg-slate-50 disabled:opacity-40 disabled:pointer-events-none transition"
       >
         <span className="hidden sm:inline">Next</span>
         <ChevronRight className="w-4 h-4" />
@@ -72,4 +72,3 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
     </nav>
   );
 }
-

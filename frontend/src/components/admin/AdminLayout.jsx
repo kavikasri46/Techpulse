@@ -8,9 +8,9 @@ import {
   ExternalLink,
   LogOut,
   Shield,
-  Terminal,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import ZohoLogo from '../common/ZohoLogo';
 
 export default function AdminLayout() {
   const { user, logout } = useAuth();
@@ -29,25 +29,20 @@ export default function AdminLayout() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col">
-      {/* Admin Top Bar */}
-      <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#F4F5F7] flex flex-col">
+      {/* Zoho Admin Top Bar */}
+      <header className="bg-[#1A1A1A] text-white border-b border-[#2C2C2C] sticky top-0 z-50 w-full">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-16">
             
             {/* Left Brand */}
             <div className="flex items-center gap-4">
-              <Link to="/admin" className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
-                  <Terminal className="w-4 h-4" />
-                </div>
-                <span className="font-extrabold text-lg text-white tracking-tight">
-                  TechPulse<span className="text-brand-400">.CMS</span>
+              <Link to="/admin" className="flex items-center gap-2">
+                <ZohoLogo />
+                <span className="text-xs uppercase font-extrabold tracking-wider bg-[#0F65AF] text-white px-2 py-0.5 rounded-sm">
+                  CMS Studio
                 </span>
               </Link>
-              <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono uppercase tracking-wider bg-slate-800 text-brand-300 border border-slate-700">
-                Editorial Control Panel
-              </span>
             </div>
 
             {/* Right Profile & Actions */}
@@ -56,20 +51,20 @@ export default function AdminLayout() {
                 to="/"
                 target="_blank"
                 rel="noreferrer"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition"
+                className="hidden md:flex items-center gap-1.5 text-xs font-bold text-slate-300 hover:text-white bg-[#2A2A2A] hover:bg-[#333333] px-3 py-1.5 rounded-md border border-[#3E3E3E] transition"
               >
-                <span>View Live Site</span>
+                <span>Live Zoho Blog</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </Link>
 
-              <div className="flex items-center gap-2 pl-3 border-l border-slate-800">
+              <div className="flex items-center gap-2 pl-3 border-l border-slate-700">
                 <img
                   src={user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80'}
                   alt={user?.name || 'Admin'}
-                  className="w-8 h-8 rounded-full object-cover ring-1 ring-slate-700"
+                  className="w-8 h-8 rounded-full object-cover ring-1 ring-slate-600"
                 />
                 <div className="hidden sm:block text-left">
-                  <p className="text-xs font-semibold text-white leading-tight">{user?.name || 'Admin'}</p>
+                  <p className="text-xs font-bold text-white leading-tight">{user?.name || 'Zoho Editor'}</p>
                   <p className="text-[10px] text-slate-400 font-mono capitalize">{user?.role || 'Administrator'}</p>
                 </div>
               </div>
@@ -77,7 +72,7 @@ export default function AdminLayout() {
               <button
                 onClick={handleLogout}
                 title="Sign out"
-                className="p-1.5 rounded-lg text-slate-400 hover:text-red-400 hover:bg-slate-800 transition"
+                className="p-1.5 rounded-md text-slate-400 hover:text-red-400 hover:bg-[#2A2A2A] transition"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -85,10 +80,10 @@ export default function AdminLayout() {
           </div>
         </div>
 
-        {/* Admin Navigation Strip */}
-        <div className="bg-slate-800/80 border-t border-slate-800/60">
+        {/* Zoho Admin Subnav */}
+        <div className="bg-[#242424] border-t border-[#333333]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="flex items-center gap-1 overflow-x-auto py-2">
+            <nav className="flex items-center gap-1 overflow-x-auto py-1.5">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -97,10 +92,10 @@ export default function AdminLayout() {
                     to={item.path}
                     end={item.end}
                     className={({ isActive }) =>
-                      `flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+                      `flex items-center gap-2 px-3.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wide whitespace-nowrap transition-colors ${
                         isActive
-                          ? 'bg-brand-600 text-white shadow-xs'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-700/60'
+                          ? 'bg-[#E42528] text-white shadow-xs'
+                          : 'text-slate-300 hover:text-white hover:bg-[#333333]'
                       }`
                     }
                   >
@@ -121,4 +116,3 @@ export default function AdminLayout() {
     </div>
   );
 }
-

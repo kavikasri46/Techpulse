@@ -1,35 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+/**
+ * Official Zoho 4-tile logo component matching the brand identity
+ * Features the signature 4 interconnected rounded square tiles:
+ * Red, Green, Blue, Yellow + ZOHO wordmark + optional "Blog" tag
+ */
 export default function ZohoLogo({ size = 'default', showBadge = true }) {
   const isLarge = size === 'large';
-  const blockClass = isLarge ? 'w-6 h-6 rounded-md text-xs font-black' : 'w-5 h-5 rounded-[4px] text-[10px] font-black';
 
   return (
-    <div className="flex items-center gap-2.5 group select-none">
-      {/* Iconic Zoho 4-tile cube icon */}
-      <div className="grid grid-cols-2 gap-1">
-        <div className={`${blockClass} bg-[#E42528] text-white flex items-center justify-center shadow-2xs`}>
-          Z
-        </div>
-        <div className={`${blockClass} bg-[#009639] text-white flex items-center justify-center shadow-2xs`}>
-          O
-        </div>
-        <div className={`${blockClass} bg-[#0F65AF] text-white flex items-center justify-center shadow-2xs`}>
-          H
-        </div>
-        <div className={`${blockClass} bg-[#FFC600] text-slate-900 flex items-center justify-center shadow-2xs`}>
-          O
-        </div>
+    <div className="flex items-center gap-3 select-none group">
+      {/* 4 interconnected rounded tiles as seen on zoho.com */}
+      <div className="flex items-center -space-x-1">
+        {/* Red tile */}
+        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#E42528] -rotate-6 transform transition-transform group-hover:rotate-0`} />
+        {/* Green tile */}
+        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#009639] rotate-3 transform transition-transform group-hover:rotate-0`} />
+        {/* Blue tile */}
+        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#0F65AF] -rotate-3 transform transition-transform group-hover:rotate-0`} />
+        {/* Yellow tile */}
+        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#FFC600] rotate-6 transform transition-transform group-hover:rotate-0`} />
       </div>
 
-      {/* Brand Name & Blog Tag */}
-      <div className="flex items-baseline gap-1.5">
-        <span className={`font-black tracking-tight text-slate-900 ${isLarge ? 'text-2xl' : 'text-xl'}`}>
-          ZOHO
-        </span>
+      {/* Brand text & Blog badge */}
+      <div className="flex items-center gap-2">
+        <div className="flex flex-col">
+          <span className={`font-black tracking-[0.18em] text-[#111111] leading-none ${isLarge ? 'text-2xl' : 'text-xl'}`}>
+            ZOHO
+          </span>
+        </div>
         {showBadge && (
-          <span className="text-xs uppercase font-extrabold tracking-wider text-white bg-[#E42528] px-2 py-0.5 rounded-sm shadow-2xs">
+          <span className="text-[10px] uppercase font-black tracking-wider text-white bg-[#E42528] px-1.5 py-0.5 rounded shadow-2xs">
             Blog
           </span>
         )}
