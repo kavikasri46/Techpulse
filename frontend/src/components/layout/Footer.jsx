@@ -74,18 +74,18 @@ export default function Footer() {
               Zoho Corporation is a multi-national technology company providing 55+ software applications for business, enterprise collaboration, and cloud infrastructure. We are 100% privately held, bootstrapped, and dedicated to user privacy.
             </p>
             <div className="flex items-center gap-2 pt-2">
-              <a href="https://twitter.com/zoho" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" aria-label="Twitter">
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="Zoho Blog Twitter Updates">
                 <Twitter className="w-4 h-4" />
-              </a>
-              <a href="https://linkedin.com/company/zoho" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#0F65AF] hover:text-white flex items-center justify-center transition" aria-label="LinkedIn">
+              </Link>
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#0F65AF] hover:text-white flex items-center justify-center transition" title="Zoho Blog LinkedIn">
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="https://github.com/zoho" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#111111] hover:text-white flex items-center justify-center transition" aria-label="GitHub">
+              </Link>
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#111111] hover:text-white flex items-center justify-center transition" title="Zoho Open Source GitHub">
                 <Github className="w-4 h-4" />
-              </a>
-              <a href="https://youtube.com/zoho" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" aria-label="YouTube">
+              </Link>
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="Zoho Video Engineering Series">
                 <Youtube className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -103,27 +103,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Zoho Suite */}
+          {/* Zoho Suite (Internal Navigation - No External Redirects) */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-xs tracking-wider uppercase">Zoho Apps</h4>
+            <h4 className="text-white font-bold mb-4 text-xs tracking-wider uppercase">Featured Architecture</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="https://www.zoho.com/crm/" target="_blank" rel="noreferrer" className="hover:text-white transition">Zoho CRM</a></li>
-              <li><a href="https://www.zoho.com/mail/" target="_blank" rel="noreferrer" className="hover:text-white transition">Zoho Mail</a></li>
-              <li><a href="https://www.zoho.com/workplace/" target="_blank" rel="noreferrer" className="hover:text-white transition">Zoho Workplace</a></li>
-              <li><a href="https://www.zoho.com/creator/" target="_blank" rel="noreferrer" className="hover:text-white transition">Zoho Creator</a></li>
-              <li><a href="https://www.zoho.com/one/" target="_blank" rel="noreferrer" className="hover:text-white transition">Zoho One</a></li>
+              <li><Link to="/blog?category=software-development" className="hover:text-white transition">Zoho CRM Platform</Link></li>
+              <li><Link to="/blog?category=cloud-computing" className="hover:text-white transition">Zoho Mail Core</Link></li>
+              <li><Link to="/blog?category=technology-innovation" className="hover:text-white transition">Workplace Systems</Link></li>
+              <li><Link to="/blog?category=web-and-mobile-app-development" className="hover:text-white transition">Creator Low-Code Engine</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition">Zoho One Engineering</Link></li>
             </ul>
           </div>
 
-          {/* Legal & Editorial */}
+          {/* Legal & Editorial (Internal Navigation) */}
           <div>
             <h4 className="text-white font-bold mb-4 text-xs tracking-wider uppercase">Resources</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="http://localhost:5000/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-white transition">XML Sitemap</a></li>
-              <li><a href="http://localhost:5000/robots.txt" target="_blank" rel="noreferrer" className="hover:text-white transition">robots.txt</a></li>
-              <li><Link to="/admin/login" className="hover:text-white transition text-[#FFC600] font-semibold">Zoho Staff CMS Portal</Link></li>
-              <li><a href="https://www.zoho.com/privacy.html" target="_blank" rel="noreferrer" className="hover:text-white transition">Privacy Commitment</a></li>
-              <li><a href="https://www.zoho.com/security.html" target="_blank" rel="noreferrer" className="hover:text-white transition">Security Architecture</a></li>
+              <li><Link to="/admin/login" className="hover:text-white transition text-[#FFC600] font-semibold">Author Sign In</Link></li>
+              <li><Link to="/admin/signup" className="hover:text-white transition text-emerald-400 font-semibold">Create Author Account</Link></li>
+              <li><Link to="/blog?category=cybersecurity" className="hover:text-white transition">Privacy Commitment</Link></li>
+              <li><Link to="/blog?category=cybersecurity" className="hover:text-white transition">Security Architecture</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition">All Engineering Articles</Link></li>
             </ul>
           </div>
 
