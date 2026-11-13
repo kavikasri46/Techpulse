@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold text-slate-900;
+  }
+}
+
+/* Article rich typography - Zoho Blog inspired clean corporate aesthetic */
+.article-prose {
+  @apply text-slate-700 leading-relaxed text-lg;
+}
+
+.article-prose p {
+  @apply mb-6 leading-8;
+}
+
+.article-prose h2 {
+  @apply text-2xl sm:text-3xl font-extrabold text-slate-900 mt-10 mb-4 pb-2 border-b border-slate-200 scroll-mt-24;
+}
+
+.article-prose h3 {
+  @apply text-xl sm:text-2xl font-bold text-slate-800 mt-8 mb-3 scroll-mt-24;
+}
+
+.article-prose ul {
+  @apply list-disc list-inside mb-6 space-y-2 pl-2;
+}
+
+.article-prose ol {
+  @apply list-decimal list-inside mb-6 space-y-2 pl-2;
+}
+
+.article-prose li strong {
+  @apply text-slate-900 font-semibold;
+}
+
+.article-prose blockquote {
+  @apply my-8 pl-6 border-l-4 border-brand-500 italic text-slate-700 bg-brand-50/60 py-4 pr-4 rounded-r-lg;
+}
+
+.article-prose pre {
+  @apply bg-slate-900 text-slate-100 p-5 rounded-xl my-6 overflow-x-auto text-sm font-mono border border-slate-800 shadow-md;
+}
+
+.article-prose code:not(pre code) {
+  @apply bg-slate-100 text-brand-700 font-mono text-sm px-1.5 py-0.5 rounded border border-slate-200;
+}
+
+.article-prose table {
+  @apply w-full text-left border-collapse my-8 text-sm overflow-hidden rounded-xl border border-slate-200 shadow-sm;
+}
+
+.article-prose thead {
+  @apply bg-slate-100 text-slate-700 font-semibold uppercase tracking-wider text-xs;
+}
+
+.article-prose th,
+.article-prose td {
+  @apply px-4 py-3.5 border-b border-slate-200;
+}
+
+.article-prose tbody tr:hover {
+  @apply bg-slate-50/80;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
