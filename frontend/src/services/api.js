@@ -1,12 +1,41 @@
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
-const BASE_URL = rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
+/**
+ * Dynamic API Base URL resolution:
+ * 1. User-configured custom URL in localStorage (useful for instant connecting on Vercel without rebuilding)
+ * 2. Vite environment variable VITE_API_BASE_URL (configured in Vercel project settings)
+ * 3. Fallback to '/api' (proxied by Vite in local development)
+ */
+export function getApiBaseUrl() {
+  const custom = typeof window !== 'undefined' ? localStorage.getItem('custom_api_base_url') : null;
+  if (custom && custom.trim()) {
+    const trimmed = custom.trim();
+    return trimmed.endsWith('/') ? trimmed.slice(0, -1) : trimmed;
+  }
+
+  const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+  return rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
+}
+
+export function setCustomApiBaseUrl(url) {
+  if (typeof window === 'undefined') return;
+  if (url && url.trim()) {
+    let clean = url.trim();
+    if (clean.endsWith('/')) clean = clean.slice(0, -1);
+    if (!clean.endsWith('/api') && !clean.includes('/api/')) {
+      clean = `${clean}/api`;
+    }
+    localStorage.setItem('custom_api_base_url', clean);
+  } else {
+    localStorage.removeItem('custom_api_base_url');
+  }
+}
 
 /**
  * Common fetch wrapper with JSON serialization and token injection
  */
 async function request(endpoint, options = {}) {
-  const url = `${BASE_URL}${endpoint}`;
-  const token = localStorage.getItem('techpulse_token');
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}${endpoint}`;
+  const token = typeof window !== 'undefined' ? localStorage.getItem('techpulse_token') : null;
 
   const headers = {
     ...options.headers,
@@ -30,6 +59,14 @@ async function request(endpoint, options = {}) {
     const data = await res.json().catch(() => null);
 
     if (!res.ok) {
+      if (res.status === 405) {
+        const errorMsg =
+          'Error 405: The request was sent to Vercel static files instead of the Render backend. Please set your Render Backend URL in Vercel (VITE_API_BASE_URL) or in the Backend Settings box below.';
+        const err = new Error(errorMsg);
+        err.status = 405;
+        throw err;
+      }
+
       const errorMsg = data?.message || `HTTP error ${res.status}: ${res.statusText}`;
       const err = new Error(errorMsg);
       err.status = res.status;
