@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Lock, Mail, AlertCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, Lock, Mail, AlertCircle, Sparkles, Server, Check, Settings2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { getApiBaseUrl, setCustomApiBaseUrl } from '../../services/api';
 import ZohoLogo from '../../components/common/ZohoLogo';
 import SeoHead from '../../components/common/SeoHead';
 
@@ -10,6 +11,10 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showServerConfig, setShowServerConfig] = useState(false);
+  const [serverUrl, setServerUrl] = useState(() => getApiBaseUrl());
+  const [savedServerMsg, setSavedServerMsg] = useState('');
+
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -23,6 +28,9 @@ export default function AdminLoginPage() {
       navigate('/admin');
     } catch (err) {
       setError(err.message || 'Invalid email or password. Please verify credentials.');
+      if (err.message && err.message.includes('405')) {
+        setShowServerConfig(true);
+      }
     } finally {
       setLoading(false);
     }
@@ -32,6 +40,13 @@ export default function AdminLoginPage() {
     setEmail('admin@techpulse.io');
     setPassword('Admin@123');
     setError('');
+  };
+
+  const handleSaveServerUrl = (e) => {
+    e.preventDefault();
+    setCustomApiBaseUrl(serverUrl);
+    setSavedServerMsg('Saved! Testing connection with new backend URL...');
+    setTimeout(() => setSavedServerMsg(''), 4000);
   };
 
   return (
