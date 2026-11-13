@@ -48,8 +48,10 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 
-      {/* Admin Auth Routes */}
+      {/* Internal Auth Routes (Never Redirect Outside) */}
       <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route path="/login" element={<AdminLoginPage />} />
+      <Route path="/signin" element={<AdminLoginPage />} />
       <Route path="/admin/signup" element={<AdminRegisterPage />} />
       <Route path="/signup" element={<AdminRegisterPage />} />
       <Route path="/register" element={<AdminRegisterPage />} />
