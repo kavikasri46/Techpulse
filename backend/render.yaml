@@ -1,6 +1,7 @@
 services:
   - type: web
     name: zoho-blog-backend
+    rootDir: backend
     env: node
     plan: free
     buildCommand: npm install
@@ -18,4 +19,3 @@ services:
         value: 7d
       - key: CLIENT_URL
         sync: false
-

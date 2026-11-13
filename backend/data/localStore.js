@@ -339,6 +339,7 @@ class LocalStore {
 
   // Users
   getUserByEmail(email) {
+    if (!email) return null;
     return this.users.find(u => u.email.toLowerCase() === email.toLowerCase());
   }
 
@@ -346,6 +347,26 @@ class LocalStore {
     const user = this.users.find(u => u._id === id);
     if (!user) return null;
     const { password, ...safe } = user;
+    return safe;
+  }
+
+  createUser(data) {
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(data.password, salt);
+
+    const newUser = {
+      _id: 'user_' + Date.now(),
+      name: data.name,
+      email: data.email.toLowerCase(),
+      password: hashedPassword,
+      role: data.role || 'admin',
+      avatar: data.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80',
+      createdAt: new Date().toISOString()
+    };
+
+    this.users.push(newUser);
+    this.save();
+    const { password, ...safe } = newUser;
     return safe;
   }
 }

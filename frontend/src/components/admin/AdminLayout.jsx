@@ -81,8 +81,8 @@ export default function AdminLayout() {
         </div>
 
         {/* Zoho Admin Subnav */}
-        <div className="bg-[#242424] border-t border-[#333333]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#242424] border-t border-[#333333] w-full">
+          <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
             <nav className="flex items-center gap-1 overflow-x-auto py-1.5">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -110,7 +110,7 @@ export default function AdminLayout() {
       </header>
 
       {/* Main Admin Outlet Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 py-8">
         <Outlet />
       </main>
     </div>
