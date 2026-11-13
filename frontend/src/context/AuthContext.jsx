@@ -41,6 +41,17 @@ export const AuthProvider = ({ children }) => {
     throw new Error(res?.message || 'Authentication failed');
   };
 
+  const register = async (name, email, password) => {
+    const res = await authService.register({ name, email, password });
+    if (res && res.success) {
+      localStorage.setItem('techpulse_token', res.token);
+      setToken(res.token);
+      setUser(res.user);
+      return res.user;
+    }
+    throw new Error(res?.message || 'Registration failed');
+  };
+
   const logout = () => {
     localStorage.removeItem('techpulse_token');
     setToken(null);
@@ -56,6 +67,7 @@ export const AuthProvider = ({ children }) => {
         isAdmin: user?.role === 'admin',
         loading,
         login,
+        register,
         logout,
       }}
     >

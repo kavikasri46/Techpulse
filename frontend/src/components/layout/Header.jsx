@@ -13,14 +13,14 @@ export default function Header({ onOpenSearch }) {
   const searchParams = new URLSearchParams(location.search);
   const currentCategory = searchParams.get('category');
 
-  // Navigation items matching Zoho Blog and Engineering topics
+  // Navigation items matching Zoho official menu + Zoho Blog topics
   const navLinks = [
-    { name: 'All Stories', path: '/blog' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Software Engineering', path: '/blog?category=software-development' },
-    { name: 'AI & Machine Learning', path: '/blog?category=artificial-intelligence-machine-learning' },
-    { name: 'Cloud & Infrastructure', path: '/blog?category=cloud-computing' },
+    { name: 'AI & Zia', path: '/blog?category=artificial-intelligence-machine-learning' },
+    { name: 'Cloud Fleet', path: '/blog?category=cloud-computing' },
     { name: 'Cybersecurity', path: '/blog?category=cybersecurity' },
-    { name: 'Technology & Innovation', path: '/blog?category=technology-innovation' },
+    { name: 'Innovation', path: '/blog?category=technology-innovation' },
   ];
 
   // Precise active link detection so clicked link immediately changes color
@@ -50,18 +50,18 @@ export default function Header({ onOpenSearch }) {
           </Link>
 
           {/* Desktop Nav Links with prominent color change on click */}
-          <nav className="hidden xl:flex items-center gap-1.5 h-full">
+          <nav className="hidden xl:flex items-center gap-2 h-full">
             <Link
               to="/"
               className={`px-3.5 py-2 text-[14px] transition-all rounded-md flex items-center relative ${
                 isLinkActive('/')
-                  ? 'text-[#E42528] font-bold bg-red-50/90 shadow-2xs'
-                  : 'text-[#333333] font-medium hover:text-[#E42528] hover:bg-slate-50'
+                  ? 'text-[#E42528] font-extrabold bg-red-50 border border-red-200/70 shadow-2xs'
+                  : 'text-[#222222] font-semibold hover:text-[#E42528] hover:bg-slate-50'
               }`}
             >
               Home
               {isLinkActive('/') && (
-                <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#E42528] rounded-t-sm" />
+                <span className="absolute -bottom-1 left-3 right-3 h-[3px] bg-[#E42528] rounded-full" />
               )}
             </Link>
 
@@ -73,13 +73,13 @@ export default function Header({ onOpenSearch }) {
                   to={link.path}
                   className={`px-3.5 py-2 text-[14px] transition-all rounded-md flex items-center relative ${
                     active
-                      ? 'text-[#E42528] font-bold bg-red-50/90 shadow-2xs'
-                      : 'text-[#333333] font-medium hover:text-[#E42528] hover:bg-slate-50'
+                      ? 'text-[#E42528] font-extrabold bg-red-50 border border-red-200/70 shadow-2xs'
+                      : 'text-[#222222] font-semibold hover:text-[#E42528] hover:bg-slate-50'
                   }`}
                 >
                   {link.name}
                   {active && (
-                    <span className="absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#E42528] rounded-t-sm" />
+                    <span className="absolute -bottom-1 left-3 right-3 h-[3px] bg-[#E42528] rounded-full" />
                   )}
                 </Link>
               );
@@ -130,15 +130,13 @@ export default function Header({ onOpenSearch }) {
               </Link>
             )}
 
-            {/* Red Sign Up Button matching Zoho screenshot */}
-            <a
-              href="https://www.zoho.com/signup.html"
-              target="_blank"
-              rel="noreferrer"
+            {/* Red Sign Up Button pointing to internal signup */}
+            <Link
+              to="/admin/signup"
               className="inline-flex items-center px-4 py-2 rounded-md border-2 border-[#E42528] text-[#E42528] hover:bg-[#E42528] hover:text-white text-xs font-bold uppercase tracking-wider transition"
             >
               Sign Up
-            </a>
+            </Link>
 
             {/* Mobile menu hamburger */}
             <button
@@ -206,13 +204,22 @@ export default function Header({ onOpenSearch }) {
                 </button>
               </>
             ) : (
-              <Link
-                to="/admin/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md border border-slate-300 text-slate-800 font-semibold text-sm hover:bg-slate-50"
-              >
-                <Shield className="w-4 h-4 text-slate-400" /> Admin CMS Login
-              </Link>
+              <div className="flex gap-2">
+                <Link
+                  to="/admin/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-md border border-slate-300 text-slate-800 font-semibold text-xs hover:bg-slate-50 transition"
+                >
+                  <Shield className="w-3.5 h-3.5 text-slate-400" /> Sign In
+                </Link>
+                <Link
+                  to="/admin/signup"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex-1 flex items-center justify-center py-2.5 rounded-md bg-[#E42528] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#C71B1E] transition"
+                >
+                  Sign Up
+                </Link>
+              </div>
             )}
           </div>
         </div>

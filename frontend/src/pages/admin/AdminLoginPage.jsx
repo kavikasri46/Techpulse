@@ -124,8 +124,15 @@ export default function AdminLoginPage() {
             </div>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-slate-100 text-center">
-            <Link to="/" className="text-xs font-semibold text-slate-500 hover:text-[#E42528] transition">
+          <div className="mt-6 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+            <span>Don't have an account?</span>
+            <Link to="/admin/signup" className="font-bold text-[#E42528] hover:underline">
+              Create Account →
+            </Link>
+          </div>
+
+          <div className="mt-3 text-center">
+            <Link to="/" className="text-xs font-semibold text-slate-400 hover:text-[#E42528] transition">
               ← Return to Zoho Blog
             </Link>
           </div>

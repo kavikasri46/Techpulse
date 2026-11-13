@@ -152,6 +152,12 @@ export const authService = {
       body: JSON.stringify(credentials),
     }),
 
+  register: (userData) =>
+    request('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(userData),
+    }),
+
   getMe: () => request('/auth/me'),
 };
 

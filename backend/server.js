@@ -47,6 +47,26 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.get('/sitemap.xml', getSitemap);
 app.get('/robots.txt', getRobots);
 
+// Root Welcome & Health Route (Prevents 404 when visiting the base URL)
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Zoho Blog REST Engine Backend is running successfully!',
+    timestamp: new Date().toISOString(),
+    status: 'healthy',
+    database: getDbStatus(),
+    endpoints: {
+      health: '/api/health',
+      posts: '/api/posts',
+      categories: '/api/categories',
+      authors: '/api/authors',
+      auth: '/api/auth',
+      sitemap: '/sitemap.xml',
+      robots: '/robots.txt'
+    }
+  });
+});
+
 // API Health Check
 app.get('/api/health', (req, res) => {
   res.status(200).json({

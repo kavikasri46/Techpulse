@@ -12,6 +12,7 @@ import NotFoundPage from './pages/NotFoundPage';
 // Admin Layout & Pages
 import AdminLayout from './components/admin/AdminLayout';
 import AdminLoginPage from './pages/admin/AdminLoginPage';
+import AdminRegisterPage from './pages/admin/AdminRegisterPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import AdminPostEditorPage from './pages/admin/AdminPostEditorPage';
 import AdminCategoriesPage from './pages/admin/AdminCategoriesPage';
@@ -47,8 +48,11 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 
-      {/* Admin Auth Route */}
+      {/* Admin Auth Routes */}
       <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route path="/admin/signup" element={<AdminRegisterPage />} />
+      <Route path="/signup" element={<AdminRegisterPage />} />
+      <Route path="/register" element={<AdminRegisterPage />} />
 
       {/* Protected Admin CMS Routes */}
       <Route
