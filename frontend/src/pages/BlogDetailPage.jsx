@@ -145,11 +145,9 @@ export default function BlogDetailPage() {
           <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-[#E5E7EB] bg-white px-4 rounded-xl">
             {/* Author Info */}
             <div className="flex items-center gap-3">
-              <img
-                src={post.author?.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'}
-                alt={post.author?.name}
-                className="w-11 h-11 rounded-full object-cover ring-2 ring-slate-200"
-              />
+              <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+                <User className="w-5 h-5" />
+              </div>
               <div>
                 <h4 className="text-sm font-bold text-slate-900">{post.author?.name}</h4>
                 <p className="text-xs text-slate-500 font-medium">{post.author?.title || 'Engineer at TechPulse'}</p>
@@ -242,18 +240,55 @@ export default function BlogDetailPage() {
             {/* Author Bio Box */}
             {post.author && (
               <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[#FAFAFB] border border-[#E5E7EB] flex flex-col sm:flex-row gap-5 items-start sm:items-center">
-                <img
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="w-16 h-16 rounded-full object-cover ring-2 ring-white shadow-2xs flex-shrink-0"
-                />
+                <div className="w-14 h-14 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0 shadow-2xs">
+                  <User className="w-7 h-7" />
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[11px] uppercase font-black tracking-wider text-[#E42528]">Article Contributor</span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900">{post.author.name}</h4>
                   <p className="text-xs text-slate-500 font-medium mb-2">{post.author.title || 'TechPulse Engineer'}</p>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{post.author.bio}</p>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">{post.author.bio}</p>
+
+                  <div className="flex items-center gap-2 pt-2 border-t border-slate-200/60 text-slate-500">
+                    {post.author.email && (
+                      <a
+                        href={`mailto:${post.author.email}`}
+                        className="p-1.5 rounded-md hover:text-[#E42528] hover:bg-red-50 transition"
+                        title={post.author.email}
+                      >
+                        <Mail className="w-4 h-4" />
+                      </a>
+                    )}
+                    <a
+                      href={post.author.socialLinks?.twitter || 'https://twitter.com/techpulse'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded-md hover:text-[#E42528] hover:bg-red-50 transition"
+                      title="Twitter / X"
+                    >
+                      <Twitter className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={post.author.socialLinks?.linkedin || 'https://linkedin.com/company/techpulse'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded-md hover:text-[#E42528] hover:bg-red-50 transition"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={post.author.socialLinks?.github || 'https://github.com/techpulse'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded-md hover:text-[#E42528] hover:bg-red-50 transition"
+                      title="GitHub"
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             )}

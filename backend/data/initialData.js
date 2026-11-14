@@ -56,7 +56,7 @@ const initialAuthors = [
     name: 'Kavin Raj',
     title: 'Principal Software Architect at TechPulse',
     bio: 'Kavin is a distributed systems architect with 14+ years building high-throughput event queues, fault-tolerant backends, and Clean Architecture microservices.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'kavin.raj@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -69,7 +69,7 @@ const initialAuthors = [
     name: 'Priya Devi',
     title: 'Head of AI & Machine Learning Research at TechPulse',
     bio: 'Priya leads enterprise AI initiatives, researching zero-leakage neural inference pipelines, autonomous agent workflows, and private LLM fine-tuning.',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'priya.devi@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -82,7 +82,7 @@ const initialAuthors = [
     name: 'Aravind Kumar',
     title: 'Lead Cloud Infrastructure Engineer at TechPulse',
     bio: 'Aravind oversees multi-region bare-metal cloud infrastructure, multi-cluster Kubernetes deployments, and Cilium eBPF mesh networks.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'aravind.kumar@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -95,7 +95,7 @@ const initialAuthors = [
     name: 'Nithish Kumar',
     title: 'Senior Distributed Systems Engineer at TechPulse',
     bio: 'Nithish specializes in distributed consensus, Paxos/Raft storage engines, and ultra-low-latency real-time collaboration protocols.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'nithish.kumar@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -108,7 +108,7 @@ const initialAuthors = [
     name: 'Harish Anand',
     title: 'Staff Frontend Architect at TechPulse',
     bio: 'Harish leads frontend performance engineering, modern React architecture, and design system component libraries across enterprise suites.',
-    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'harish.anand@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -121,7 +121,7 @@ const initialAuthors = [
     name: 'Dharani Prakash',
     title: 'Principal Security & Zero Trust Architect',
     bio: 'Dharani designs defense-in-depth security architectures, post-quantum cryptography migrations, and mTLS microsegmentation.',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'dharani.prakash@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -134,7 +134,7 @@ const initialAuthors = [
     name: 'Vignesh Babu',
     title: 'Lead Database Systems Engineer',
     bio: 'Vignesh optimizes petabyte-scale distributed database engines, automated sharding topologies, and high-concurrency transaction pipelines.',
-    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'vignesh.babu@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -147,7 +147,7 @@ const initialAuthors = [
     name: 'Keerthana Raj',
     title: 'Senior Site Reliability Engineer (SRE)',
     bio: 'Keerthana focuses on continuous reliability, chaos engineering experiments, automated incident remediation, and 99.999% uptime guarantees.',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'keerthana.raj@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -160,7 +160,7 @@ const initialAuthors = [
     name: 'Surya Prakash',
     title: 'Mobile Engineering Lead at TechPulse',
     bio: 'Surya builds offline-first cross-platform mobile runtimes, local CRDT synchronization, and responsive mobile architecture.',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'surya.prakash@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -173,7 +173,7 @@ const initialAuthors = [
     name: 'Abinaya Selvam',
     title: 'Machine Learning Systems Researcher',
     bio: 'Abinaya develops private transformer quantization techniques, edge AI inference, and autonomous agent orchestration.',
-    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'abinaya.selvam@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -186,7 +186,7 @@ const initialAuthors = [
     name: 'Gokul Krishna',
     title: 'Senior Backend Systems Developer',
     bio: 'Gokul architects high-throughput microservices using Node.js, Go, and gRPC, specializing in event-driven streaming.',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'gokul.krishna@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -199,7 +199,7 @@ const initialAuthors = [
     name: 'Monisha Devi',
     title: 'Cloud Security & Cryptography Specialist',
     bio: 'Monisha researches hardware security modules (HSM), automated cryptographic key rotation, and compliance automation.',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'monisha.devi@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -212,7 +212,7 @@ const initialAuthors = [
     name: 'Ashwin Kumar',
     title: 'Staff Web Platform Engineer',
     bio: 'Ashwin crafts accessible, ultra-performant web interfaces, micro-frontends, and Core Web Vitals optimization strategies.',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'ashwin.kumar@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -225,7 +225,7 @@ const initialAuthors = [
     name: 'Yazhini Karthik',
     title: 'Event Streaming & Dataflow Architect',
     bio: 'Yazhini designs real-time event streaming platforms, Apache Kafka topologies, and streaming stateful data pipelines.',
-    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'yazhini.karthik@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -238,7 +238,7 @@ const initialAuthors = [
     name: 'Santhosh Kumar',
     title: 'Bare-Metal & Datacenter Fleet Specialist',
     bio: 'Santhosh directs physical server orchestration, cooling efficiency in private data centers, and fiber network peering.',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'santhosh.kumar@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -251,7 +251,7 @@ const initialAuthors = [
     name: 'Janani Prabhu',
     title: 'VP of Enterprise Engineering at TechPulse',
     bio: 'Janani leads engineering culture, architectural reviews, and developer productivity tools across all platform divisions.',
-    avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'janani.prabhu@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -264,7 +264,7 @@ const initialAuthors = [
     name: 'Dinesh Raj',
     title: 'Observability & Metrics Platform Lead',
     bio: 'Dinesh engineers distributed tracing pipelines, telemetry collectors, and automated anomaly detection dashboards.',
-    avatar: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'dinesh.raj@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -277,7 +277,7 @@ const initialAuthors = [
     name: 'Pavithra Mani',
     title: 'Data Platform & Lakehouse Engineer',
     bio: 'Pavithra builds scalable data lakehouses, federated query engines, and privacy-preserving data analytics.',
-    avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'pavithra.mani@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -290,7 +290,7 @@ const initialAuthors = [
     name: 'Praveen Kumar',
     title: 'Senior Cybersecurity Threat Analyst',
     bio: 'Praveen leads threat emulation, penetration testing, automated static analysis security testing, and incident response.',
-    avatar: 'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'praveen.kumar@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
@@ -303,7 +303,7 @@ const initialAuthors = [
     name: 'Tharun Selvan',
     title: 'Low-Code Engine & Microservices Developer',
     bio: 'Tharun specializes in visual workflow builders, sandboxed AST code execution, and modular serverless runtimes.',
-    avatar: 'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?auto=format&fit=crop&w=400&q=80',
+    avatar: '',
     email: 'tharun.selvan@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',

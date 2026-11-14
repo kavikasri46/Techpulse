@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit2, Trash2, Users, Mail, Twitter, Linkedin, Github, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Plus, Edit2, Trash2, Users, User, Mail, Twitter, Linkedin, Github, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { authorService } from '../../services/api';
 import SeoHead from '../../components/common/SeoHead';
 
@@ -150,11 +150,9 @@ export default function AdminAuthorsPage() {
           >
             <div>
               <div className="flex items-center gap-3.5 mb-4">
-                <img
-                  src={author.avatar}
-                  alt={author.name}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-slate-100"
-                />
+                <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+                  <User className="w-6 h-6" />
+                </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-900">{author.name}</h3>
                   <p className="text-xs text-slate-500">{author.title}</p>

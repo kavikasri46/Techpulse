@@ -13,7 +13,8 @@ import {
   ExternalLink,
   Star,
   Layers,
-  Sparkles
+  Sparkles,
+  User
 } from 'lucide-react';
 import { postService, categoryService } from '../../services/api';
 import SeoHead from '../../components/common/SeoHead';
@@ -255,11 +256,9 @@ export default function AdminDashboardPage() {
                     {/* Author */}
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-2">
-                        <img
-                          src={post.author?.avatar}
-                          alt={post.author?.name}
-                          className="w-6 h-6 rounded-full object-cover"
-                        />
+                        <div className="w-6 h-6 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+                          <User className="w-3.5 h-3.5" />
+                        </div>
                         <span className="font-semibold text-slate-700">{post.author?.name || 'Staff Author'}</span>
                       </div>
                     </td>

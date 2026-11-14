@@ -8,6 +8,7 @@ import {
   ExternalLink,
   LogOut,
   Shield,
+  User,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import TechPulseLogo from '../common/TechPulseLogo';
@@ -58,11 +59,9 @@ export default function AdminLayout() {
               </Link>
 
               <div className="flex items-center gap-2 pl-3 border-l border-slate-700">
-                <img
-                  src={user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80'}
-                  alt={user?.name || 'Admin'}
-                  className="w-8 h-8 rounded-full object-cover ring-1 ring-slate-600"
-                />
+                <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-red-400 flex-shrink-0">
+                  <User className="w-4 h-4" />
+                </div>
                 <div className="hidden sm:block text-left">
                   <p className="text-xs font-bold text-white leading-tight">{user?.name || 'Staff Editor'}</p>
                   <p className="text-[10px] text-slate-400 font-mono capitalize">{user?.role || 'Administrator'}</p>
