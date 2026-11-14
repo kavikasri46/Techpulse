@@ -74,7 +74,7 @@ export default function PostCard({ post }) {
             />
             <div className="flex flex-col">
               <span className="text-xs font-semibold text-slate-800 line-clamp-1">
-                {post.author?.name || 'Zoho Engineer'}
+                {post.author?.name || 'TechPulse Staff'}
               </span>
             </div>
           </div>

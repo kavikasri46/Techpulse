@@ -1,8 +1,8 @@
 {
-  "name": "zoho-blog-engine",
+  "name": "techpulse-blog-engine",
   "version": "1.0.0",
   "private": true,
-  "description": "Full-stack Zoho Blog platform (MERN)",
+  "description": "Full-stack TechPulse Engineering Blog platform (MERN)",
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",

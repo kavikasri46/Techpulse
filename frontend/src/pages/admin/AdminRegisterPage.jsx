@@ -46,14 +46,14 @@ export default function AdminRegisterPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F5F7] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <SeoHead title="Zoho Accounts - Create Staff Account" description="Sign up for Zoho Blog CMS access" />
+      <SeoHead title="TechPulse Accounts - Create Staff Account" description="Sign up for TechPulse Blog CMS access" />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-block mb-3">
           <ZohoLogo size="large" />
         </Link>
         <h2 className="mt-4 text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-          Create Zoho Staff Account
+          Create Staff Account
         </h2>
         <p className="mt-1.5 text-xs text-slate-500">
           Join the editorial team to author and publish technical stories.
@@ -99,7 +99,7 @@ export default function AdminRegisterPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@zoho.com"
+                  placeholder="name@techpulse.io"
                   className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#E42528] focus:border-[#E42528] transition"
                 />
               </div>
@@ -145,7 +145,7 @@ export default function AdminRegisterPage() {
                 disabled={loading}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-[#E42528] hover:bg-[#C71B1E] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition disabled:opacity-50"
               >
-                {loading ? 'Creating Account...' : 'Create Zoho Account'}
+                {loading ? 'Creating Account...' : 'Create Staff Account'}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

@@ -29,8 +29,8 @@ export default function AdminLayout() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F4F5F7] flex flex-col">
-      {/* Zoho Admin Top Bar */}
+    <div className="min-h-screen bg-[#F4F5F8] flex flex-col">
+      {/* TechPulse Admin Top Bar */}
       <header className="bg-[#1A1A1A] text-white border-b border-[#2C2C2C] sticky top-0 z-50 w-full">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-16">
@@ -53,7 +53,7 @@ export default function AdminLayout() {
                 rel="noreferrer"
                 className="hidden md:flex items-center gap-1.5 text-xs font-bold text-slate-300 hover:text-white bg-[#2A2A2A] hover:bg-[#333333] px-3 py-1.5 rounded-md border border-[#3E3E3E] transition"
               >
-                <span>Live Zoho Blog</span>
+                <span>Live Blog</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </Link>
 
@@ -64,7 +64,7 @@ export default function AdminLayout() {
                   className="w-8 h-8 rounded-full object-cover ring-1 ring-slate-600"
                 />
                 <div className="hidden sm:block text-left">
-                  <p className="text-xs font-bold text-white leading-tight">{user?.name || 'Zoho Editor'}</p>
+                  <p className="text-xs font-bold text-white leading-tight">{user?.name || 'Staff Editor'}</p>
                   <p className="text-[10px] text-slate-400 font-mono capitalize">{user?.role || 'Administrator'}</p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function AdminLayout() {
           </div>
         </div>
 
-        {/* Zoho Admin Subnav */}
+        {/* Admin Subnav */}
         <div className="bg-[#242424] border-t border-[#333333] w-full">
           <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
             <nav className="flex items-center gap-1 overflow-x-auto py-1.5">

@@ -11,7 +11,13 @@ export function getApiBaseUrl() {
     return trimmed.endsWith('/') ? trimmed.slice(0, -1) : trimmed;
   }
 
-  const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+  // In local development under Vite dev server, /api can be proxied.
+  // In production (Vercel), default directly to live Render backend.
+  const defaultUrl = (typeof window !== 'undefined' && window.location.hostname === 'localhost')
+    ? '/api'
+    : 'https://softrate-project-1.onrender.com/api';
+
+  const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || defaultUrl;
   return rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
 }
 

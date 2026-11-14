@@ -87,16 +87,16 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="space-y-8">
-      <SeoHead title="Zoho Blog - Editorial Studio Dashboard" />
+      <SeoHead title="TechPulse Blog - Editorial Studio Dashboard" />
 
       {/* Page Title & Actions */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Zoho Blog Editorial Dashboard
+            TechPulse Editorial Dashboard
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Publishing workflows, traffic metrics, draft revisions, and category taxonomy for Zoho technical publications.
+            Publishing workflows, traffic metrics, draft revisions, and category taxonomy for TechPulse technical publications.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ export default function AdminDashboardPage() {
               {loading ? (
                 <tr>
                   <td colSpan="7" className="text-center py-12 text-slate-400">
-                    Loading Zoho articles...
+                    Loading articles...
                   </td>
                 </tr>
               ) : posts.length > 0 ? (
@@ -260,7 +260,7 @@ export default function AdminDashboardPage() {
                           alt={post.author?.name}
                           className="w-6 h-6 rounded-full object-cover"
                         />
-                        <span className="font-semibold text-slate-700">{post.author?.name || 'Zoho Staff'}</span>
+                        <span className="font-semibold text-slate-700">{post.author?.name || 'Staff Author'}</span>
                       </div>
                     </td>
 
@@ -304,7 +304,7 @@ export default function AdminDashboardPage() {
                           <Link
                             to={`/blog/${post.slug}`}
                             target="_blank"
-                            title="Preview on live Zoho Blog"
+                            title="Preview on live Blog"
                             className="p-1.5 text-slate-400 hover:text-[#0F65AF] rounded-md hover:bg-slate-100 transition"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
@@ -346,7 +346,7 @@ export default function AdminDashboardPage() {
           <div className="bg-white rounded-xl p-6 max-w-sm w-full shadow-2xl border border-slate-200">
             <h3 className="text-lg font-black text-slate-900">Confirm Deletion</h3>
             <p className="text-xs text-slate-500 mt-2">
-              Are you sure you want to permanently delete this article from Zoho Blog?
+              Are you sure you want to permanently delete this article from TechPulse Blog?
             </p>
             <div className="mt-6 flex items-center justify-end gap-3">
               <button

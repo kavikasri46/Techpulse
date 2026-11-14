@@ -56,7 +56,7 @@ app.get('/robots.txt', getRobots);
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'Zoho Blog REST Engine Backend is running successfully!',
+    message: 'TechPulse Blog REST Engine Backend is running successfully!',
     timestamp: new Date().toISOString(),
     status: 'healthy',
     database: getDbStatus(),
@@ -77,7 +77,7 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
-    service: 'Zoho Blog REST Engine',
+    service: 'TechPulse Blog REST Engine',
     database: getDbStatus()
   });
 });
@@ -106,7 +106,7 @@ if (require.main === module) {
   // Bind to 0.0.0.0 so Render and cloud hosts can expose the port externally
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`====================================================`);
-    console.log(`🚀 Zoho Blog Engine running on port ${PORT}`);
+    console.log(`🚀 TechPulse Blog Engine running on port ${PORT}`);
     console.log(`📍 Environment : ${process.env.NODE_ENV || 'development'}`);
     console.log(`📄 Sitemap     : http://localhost:${PORT}/sitemap.xml`);
     console.log(`🤖 Robots.txt  : http://localhost:${PORT}/robots.txt`);

@@ -92,7 +92,7 @@ export default function Header({ onOpenSearch }) {
             <button
               onClick={onOpenSearch}
               className="p-2 text-slate-600 hover:text-[#E42528] rounded-full hover:bg-slate-100 transition"
-              title="Search Zoho Blog (⌘K)"
+              title="Search TechPulse Blog (⌘K)"
               aria-label="Search"
             >
               <Search className="w-4 h-4" />
@@ -191,7 +191,7 @@ export default function Header({ onOpenSearch }) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#0F65AF] text-white font-bold text-sm"
                 >
-                  <Shield className="w-4 h-4" /> Go to Zoho CMS
+                  <Shield className="w-4 h-4" /> Go to TechPulse CMS
                 </Link>
                 <button
                   onClick={() => {

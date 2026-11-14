@@ -107,11 +107,11 @@ export default function BlogListingPage() {
   return (
     <div className="py-10 bg-[#FAFAFB]">
       <SeoHead
-        title={currentCategoryObj ? `${currentCategoryObj.name} Articles - Zoho Blog` : 'All Technical Articles - Zoho Blog'}
+        title={currentCategoryObj ? `${currentCategoryObj.name} Articles - TechPulse Blog` : 'All Technical Articles - TechPulse Blog'}
         description={
           currentCategoryObj
             ? currentCategoryObj.description
-            : 'Explore all published engineering tutorials, system architecture blueprints, and technology insights from Zoho Corporation.'
+            : 'Explore all published engineering tutorials, system architecture blueprints, and technology insights from TechPulse Engineering.'
         }
       />
 
@@ -120,7 +120,7 @@ export default function BlogListingPage() {
         {/* Header Breadcrumb & Title */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            <Link to="/" className="hover:text-[#E42528] transition">Zoho</Link>
+            <Link to="/" className="hover:text-[#E42528] transition">TechPulse</Link>
             <span>/</span>
             <Link to="/blog" className="hover:text-[#E42528] transition">Blog</Link>
             <span>/</span>
@@ -130,7 +130,7 @@ export default function BlogListingPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            {currentCategoryObj ? currentCategoryObj.name : 'Zoho Engineering & Technical Articles'}
+            {currentCategoryObj ? currentCategoryObj.name : 'TechPulse Engineering & Technical Articles'}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
             {currentCategoryObj
@@ -240,13 +240,13 @@ export default function BlogListingPage() {
             <BookOpen className="w-12 h-12 text-slate-300 mx-auto mb-3" />
             <h3 className="text-lg font-bold text-slate-800">No articles found</h3>
             <p className="text-xs text-slate-500 mt-1 mb-6">
-              No published Zoho stories match your current search criteria.
+              No published articles match your current search criteria.
             </p>
             <button
               onClick={handleClearFilters}
               className="px-5 py-2.5 rounded-md bg-[#E42528] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#C71B1E] transition shadow-2xs"
             >
-              View All Zoho Articles
+              View All Articles
             </button>
           </div>
         )}

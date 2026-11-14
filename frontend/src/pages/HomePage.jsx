@@ -67,12 +67,12 @@ export default function HomePage() {
   return (
     <div className="bg-[#FAFAFB]">
       <SeoHead
-        title="Zoho Blog - Insights on Engineering, AI, Cloud & Work Culture"
-        description="Official Zoho Blog: Explore deep-dives on distributed systems, privacy-first AI, enterprise software engineering, and cloud infrastructure directly from Zoho developers."
+        title="TechPulse Blog - Insights on Engineering, AI, Cloud & Work Culture"
+        description="Official TechPulse Blog: Explore deep-dives on distributed systems, privacy-first AI, enterprise software engineering, and cloud infrastructure directly from TechPulse developers."
       />
 
       {/* ========================================================================= */}
-      {/* 1. SIGNATURE ZOHO HERO SECTION (Matching zoho.com exactly)                 */}
+      {/* 1. SIGNATURE HERO SECTION                                                 */}
       {/* ========================================================================= */}
       <section className="bg-white border-b border-[#E5E7EB] pt-12 pb-14 w-full">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
@@ -83,14 +83,14 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-black text-[#111111] tracking-tight leading-[1.12]">
                 Your life's work,<br />
-                powered by our life's work
+                powered by our code<span className="text-[#E42528]">.</span>
               </h1>
 
-              {/* Zoho signature small red line under the headline */}
+              {/* Signature small red line under the headline */}
               <div className="w-12 h-1 bg-[#E42528] rounded-full" />
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
-                A unique and powerful software suite to transform the way you work. Designed for businesses of all sizes, built by a company that values your privacy.
+                A unique and powerful software publication covering how TechPulse builds resilient cloud infrastructure, privacy-first AI models, and enterprise software for modern businesses.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -251,7 +251,7 @@ export default function HomePage() {
           {/* ========================================================================= */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-[#E5E7EB]">
             
-            {/* Catalyst by Zoho Card */}
+            {/* Catalyst by TechPulse Card */}
             <div className="rounded-2xl p-7 bg-[#F4F9FF] border border-[#D0E2FF] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
               <div>
                 <span className="inline-block text-[10px] uppercase font-black tracking-widest text-[#0F65AF] bg-[#E1EDFF] px-2.5 py-1 rounded">
@@ -263,7 +263,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <span className="font-extrabold text-base text-slate-900 tracking-tight">Catalyst</span>
-                    <span className="text-xs text-slate-500 block leading-none">by Zoho</span>
+                    <span className="text-xs text-slate-500 block leading-none">by TechPulse</span>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mt-3 leading-snug">
@@ -289,12 +289,12 @@ export default function HomePage() {
                     <Sparkles className="w-4 h-4 text-white" />
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs text-slate-500 font-medium">Zoho</span>
-                    <span className="font-extrabold text-base text-slate-900 tracking-tight">Zia Agents</span>
+                    <span className="text-xs text-slate-500 font-medium">Pulse</span>
+                    <span className="font-extrabold text-base text-slate-900 tracking-tight">AI Studio</span>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mt-3 leading-snug">
-                  Zia Agent Studio—your digital workforce
+                  Pulse AI Studio—your digital workforce
                 </h3>
                 <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                   Build autonomous agents that can qualify leads, automate enterprise workflows, and synthesize data safely.
@@ -349,7 +349,7 @@ export default function HomePage() {
               <div className="flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-[#E42528]" />
                 <h2 className="text-xl sm:text-2xl font-black text-[#111111] tracking-tight uppercase">
-                  Latest Zoho Publications
+                  Latest Engineering Articles
                 </h2>
               </div>
               <Link
@@ -384,7 +384,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Sidebar: Trending Zoho Articles + Privacy Commitment */}
+          {/* Sidebar: Trending TechPulse Articles + Privacy Commitment */}
           <aside className="lg:col-span-4 space-y-8">
             
             {/* Trending Articles Widget */}
@@ -394,7 +394,7 @@ export default function HomePage() {
                   <Flame className="w-4 h-4" />
                 </span>
                 <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">
-                  Trending on Zoho Blog
+                  Trending on TechPulse
                 </h3>
               </div>
 
@@ -427,14 +427,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Zoho Privacy Pledge Card */}
+            {/* Privacy Pledge Card */}
             <div className="rounded-2xl p-6 bg-[#1A1A1A] text-white shadow-md border border-slate-800">
               <div className="w-10 h-10 rounded-md bg-[#E42528] flex items-center justify-center mb-3 text-white">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h4 className="text-base font-black uppercase tracking-wide">Zoho's Privacy Commitment</h4>
+              <h4 className="text-base font-black uppercase tracking-wide">Privacy & Data Sovereignty</h4>
               <p className="text-xs text-slate-300 leading-relaxed mt-2">
-                We never monetize your data, never display third-party advertisements, and own our private data centers worldwide.
+                We never monetize user data, never inject third-party ad trackers, and operate secure distributed multi-region infrastructure.
               </p>
               <div className="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-[#FFC600] font-bold">
                 <span>Zero Third-Party Ads</span>

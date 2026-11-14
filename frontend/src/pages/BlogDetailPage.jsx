@@ -72,7 +72,7 @@ export default function BlogDetailPage() {
           to="/blog"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#E42528] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#C71B1E] transition"
         >
-          <ArrowLeft className="w-4 h-4" /> Return to Zoho Blog
+          <ArrowLeft className="w-4 h-4" /> Return to TechPulse Blog
         </Link>
       </div>
     );
@@ -92,7 +92,7 @@ export default function BlogDetailPage() {
     <article className="py-10 bg-[#FAFAFB]">
       {/* Dynamic SEO Tags & JSON-LD Structured Data */}
       <SeoHead
-        title={`${post.seoTitle || post.title} - Zoho Blog`}
+        title={`${post.seoTitle || post.title} - TechPulse Blog`}
         description={post.metaDescription || post.shortDescription}
         image={post.featuredImage}
         article={post}
@@ -100,9 +100,9 @@ export default function BlogDetailPage() {
 
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
         
-        {/* Zoho Breadcrumb */}
+        {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
-          <Link to="/" className="hover:text-[#E42528] transition">Zoho</Link>
+          <Link to="/" className="hover:text-[#E42528] transition">TechPulse</Link>
           <span>/</span>
           <Link to="/blog" className="hover:text-[#E42528] transition">Blog</Link>
           <span>/</span>
@@ -147,7 +147,7 @@ export default function BlogDetailPage() {
               />
               <div>
                 <h4 className="text-sm font-bold text-slate-900">{post.author?.name}</h4>
-                <p className="text-xs text-slate-500 font-medium">{post.author?.title || 'Engineer at Zoho'}</p>
+                <p className="text-xs text-slate-500 font-medium">{post.author?.title || 'Engineer at TechPulse'}</p>
               </div>
             </div>
 
@@ -193,13 +193,13 @@ export default function BlogDetailPage() {
               <SocialShare title={post.title} />
             </div>
 
-            {/* Zoho Cloud Info Card */}
+            {/* TechPulse Info Card */}
             <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] text-xs space-y-2">
               <span className="font-extrabold uppercase tracking-wider text-[#0F65AF] flex items-center gap-1">
-                <Building2 className="w-3.5 h-3.5" /> Zoho Engineering
+                <Building2 className="w-3.5 h-3.5" /> TechPulse Engineering
               </span>
               <p className="text-slate-600 leading-relaxed">
-                This article was authored by members of Zoho Corporation's engineering divisions. All code examples are vetted for enterprise reliability.
+                This article was authored by members of TechPulse Corporation's engineering divisions. All code examples are vetted for enterprise reliability.
               </p>
             </div>
           </aside>
@@ -247,7 +247,7 @@ export default function BlogDetailPage() {
                     <span className="text-[11px] uppercase font-black tracking-wider text-[#E42528]">Article Contributor</span>
                   </div>
                   <h4 className="text-base font-bold text-slate-900">{post.author.name}</h4>
-                  <p className="text-xs text-slate-500 font-medium mb-2">{post.author.title || 'Zoho Engineer'}</p>
+                  <p className="text-xs text-slate-500 font-medium mb-2">{post.author.title || 'TechPulse Engineer'}</p>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{post.author.bio}</p>
                 </div>
               </div>

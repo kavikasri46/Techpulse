@@ -171,10 +171,10 @@ export default function AdminPostEditorPage() {
     try {
       if (isEditing) {
         await postService.updatePost(id, postPayload);
-        setSuccessMessage('Zoho Blog article updated successfully!');
+        setSuccessMessage('TechPulse Blog article updated successfully!');
       } else {
         await postService.createPost(postPayload);
-        setSuccessMessage('Article published to Zoho Blog!');
+        setSuccessMessage('Article published to TechPulse Blog!');
         setTimeout(() => navigate('/admin'), 1200);
       }
     } catch (err) {
@@ -186,7 +186,7 @@ export default function AdminPostEditorPage() {
 
   return (
     <div className="space-y-6">
-      <SeoHead title={isEditing ? 'Edit Zoho Article' : 'Compose Zoho Article'} />
+      <SeoHead title={isEditing ? 'Edit Article' : 'Compose Article'} />
 
       {/* Editor Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#E5E7EB]">
@@ -199,10 +199,10 @@ export default function AdminPostEditorPage() {
           </Link>
           <div>
             <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-              {isEditing ? 'Edit Zoho Blog Article' : 'Compose Technical Article'}
+              {isEditing ? 'Edit Blog Article' : 'Compose Technical Article'}
             </h1>
             <p className="text-xs text-slate-500 font-medium">
-              Zoho Studio rich text publishing with automated SEO schema injection.
+              TechPulse Studio rich text publishing with automated SEO schema injection.
             </p>
           </div>
         </div>
@@ -251,10 +251,10 @@ export default function AdminPostEditorPage() {
         <div className="bg-white rounded-2xl p-8 sm:p-12 border border-[#E5E7EB] shadow-2xs max-w-4xl mx-auto">
           <div className="mb-6">
             <span className="text-[10px] uppercase font-black tracking-wider px-2.5 py-1 rounded bg-red-50 text-[#E42528]">
-              Zoho Preview Mode
+              Live Preview Mode
             </span>
             <h1 className="text-3xl sm:text-4xl font-black text-slate-900 mt-4 leading-tight">
-              {title || 'Untitled Zoho Article'}
+              {title || 'Untitled Tech Article'}
             </h1>
             <p className="text-base text-slate-600 mt-2">{shortDescription}</p>
           </div>
@@ -285,14 +285,14 @@ export default function AdminPostEditorPage() {
                   required
                   value={title}
                   onChange={(e) => handleTitleChange(e.target.value)}
-                  placeholder="e.g., How Zoho Scales Multi-Datacenter Cloud Infrastructure"
+                  placeholder="e.g., How We Scale Multi-Datacenter Cloud Infrastructure"
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 text-base font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#E42528]"
                 />
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                  URL Slug (Zoho SEO Friendly)
+                  URL Slug (SEO Friendly)
                 </label>
                 <div className="flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-mono text-slate-600">
                   <span className="text-slate-400 select-none">/blog/</span>
@@ -300,7 +300,7 @@ export default function AdminPostEditorPage() {
                     type="text"
                     value={slug}
                     onChange={(e) => setSlug(e.target.value)}
-                    placeholder="how-zoho-scales-multi-datacenter"
+                    placeholder="how-to-scale-multi-datacenter"
                     className="flex-1 bg-transparent border-none p-0 focus:outline-none focus:ring-0 text-slate-900 font-semibold"
                   />
                 </div>
@@ -315,7 +315,7 @@ export default function AdminPostEditorPage() {
                   required
                   value={shortDescription}
                   onChange={(e) => setShortDescription(e.target.value)}
-                  placeholder="Concise overview shown in Zoho blog listing and search results..."
+                  placeholder="Concise overview shown in blog listing and search results..."
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#E42528]"
                 />
               </div>
@@ -339,21 +339,21 @@ export default function AdminPostEditorPage() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => insertSnippet('<pre><code class="language-javascript">\nconst cluster = require("cluster");\n// Zoho Multi-worker process\n</code></pre>')}
+                    onClick={() => insertSnippet('<pre><code class="language-javascript">\nconst cluster = require("cluster");\n// Multi-worker process\n</code></pre>')}
                     className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono"
                   >
                     + Code Block
                   </button>
                   <button
                     type="button"
-                    onClick={() => insertSnippet('<blockquote>\n  "At Zoho, we believe privacy is not an afterthought; it is our foundational architecture."\n</blockquote>')}
+                    onClick={() => insertSnippet('<blockquote>\n  "We believe privacy is not an afterthought; it is our foundational architecture."\n</blockquote>')}
                     className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 italic"
                   >
                     + Quote
                   </button>
                   <button
                     type="button"
-                    onClick={() => insertSnippet('<table>\n  <thead><tr><th>Tier</th><th>Latency</th><th>Redundancy</th></tr></thead>\n  <tbody><tr><td>Zoho Edge</td><td>&lt; 5ms</td><td>Active-Active</td></tr></tbody>\n</table>')}
+                    onClick={() => insertSnippet('<table>\n  <thead><tr><th>Tier</th><th>Latency</th><th>Redundancy</th></tr></thead>\n  <tbody><tr><td>Edge Fleet</td><td>&lt; 5ms</td><td>Active-Active</td></tr></tbody>\n</table>')}
                     className="px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold"
                   >
                     + Table
@@ -366,7 +366,7 @@ export default function AdminPostEditorPage() {
                 required
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                placeholder="Write your Zoho blog post HTML here..."
+                placeholder="Write your blog post HTML here..."
                 className="w-full px-4 py-3 rounded-lg border border-slate-200 font-mono text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#E42528] leading-relaxed"
               />
             </div>
@@ -375,7 +375,7 @@ export default function AdminPostEditorPage() {
             <div className="bg-white p-6 rounded-xl border border-[#E5E7EB] shadow-2xs space-y-4">
               <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#E42528]" />
-                Zoho SEO & Open Graph Meta
+                SEO & Open Graph Meta
               </h3>
 
               <div className="grid grid-cols-1 gap-4">
@@ -427,7 +427,7 @@ export default function AdminPostEditorPage() {
                   onChange={(e) => setStatus(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#E42528]"
                 >
-                  <option value="published">Published (Live on Zoho Blog)</option>
+                  <option value="published">Published (Live on Blog)</option>
                   <option value="draft">Draft (Private)</option>
                   <option value="scheduled">Scheduled for Future</option>
                 </select>
@@ -450,7 +450,7 @@ export default function AdminPostEditorPage() {
               <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold text-slate-800">Featured Article</p>
-                  <p className="text-[11px] text-slate-400">Hero spotlight on Zoho Blog home</p>
+                  <p className="text-[11px] text-slate-400">Hero spotlight on Home</p>
                 </div>
                 <input
                   type="checkbox"
@@ -513,7 +513,7 @@ export default function AdminPostEditorPage() {
                   type="text"
                   value={tags}
                   onChange={(e) => setTags(e.target.value)}
-                  placeholder="Zoho Cloud, Kubernetes, Zero Trust"
+                  placeholder="Cloud, Kubernetes, Zero Trust"
                   className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#E42528]"
                 />
               </div>

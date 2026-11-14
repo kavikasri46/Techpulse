@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen bg-[#F4F5F7] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <SeoHead title="Zoho Accounts - CMS Sign In" description="Zoho Editorial Staff Portal" />
+      <SeoHead title="TechPulse Accounts - CMS Sign In" description="TechPulse Editorial Staff Portal" />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-block mb-3">
@@ -61,7 +61,7 @@ export default function AdminLoginPage() {
           Editorial Staff Sign In
         </h2>
         <p className="mt-1.5 text-xs text-slate-500">
-          Sign in to your Zoho Blog content management studio.
+          Sign in to your TechPulse Blog content management studio.
         </p>
       </div>
 
@@ -133,7 +133,7 @@ export default function AdminLoginPage() {
                 disabled={loading}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-[#E42528] hover:bg-[#C71B1E] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition disabled:opacity-50"
               >
-                {loading ? 'Verifying Account...' : 'Sign In to Zoho CMS'}
+                {loading ? 'Verifying Account...' : 'Sign In to TechPulse CMS'}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -148,7 +148,7 @@ export default function AdminLoginPage() {
 
           <div className="mt-3 text-center">
             <Link to="/" className="text-xs font-semibold text-slate-400 hover:text-[#E42528] transition">
-              ← Return to Zoho Blog
+              ← Return to TechPulse Blog
             </Link>
           </div>
         </div>

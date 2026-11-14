@@ -17,26 +17,26 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#18181B] text-slate-400 text-sm mt-20 border-t border-[#27272A]">
-      {/* Top Banner / Zoho Newsletter */}
+      {/* Top Banner / TechPulse Newsletter */}
       <div className="border-b border-[#27272A] bg-[#212124] w-full">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="text-xs uppercase font-extrabold tracking-wider text-[#FFC600]">
-                Zoho Engineering Dispatch
+                TechPulse Engineering Dispatch
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5 tracking-tight">
                 Get our deep-dives on cloud architecture & software engineering.
               </h3>
               <p className="mt-2 text-slate-300 text-sm max-w-xl leading-relaxed">
-                Join 100,000+ developers, system engineers, and technology leaders following Zoho's engineering journeys, zero-trust cloud setups, and privacy-first AI.
+                Join 100,000+ developers, system engineers, and technology leaders following TechPulse's engineering journeys, zero-trust cloud setups, and privacy-first AI.
               </p>
             </div>
             <div className="lg:col-span-5">
               {subscribed ? (
                 <div className="flex items-center gap-2 p-4 rounded-xl bg-emerald-950/70 border border-emerald-600 text-emerald-300 text-xs">
                   <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                  <span>Welcome to Zoho Blog updates! You're subscribed to technical notifications.</span>
+                  <span>Welcome to TechPulse Blog updates! You're subscribed to technical notifications.</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
@@ -71,19 +71,19 @@ export default function Footer() {
               <ZohoLogo />
             </Link>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Zoho Corporation is a multi-national technology company providing 55+ software applications for business, enterprise collaboration, and cloud infrastructure. We are 100% privately held, bootstrapped, and dedicated to user privacy.
+              TechPulse Corporation is an enterprise technology company providing scalable software systems for business collaboration and high-throughput cloud infrastructure.
             </p>
             <div className="flex items-center gap-2 pt-2">
-              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="Zoho Blog Twitter Updates">
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="TechPulse Blog Twitter Updates">
                 <Twitter className="w-4 h-4" />
               </Link>
-              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#0F65AF] hover:text-white flex items-center justify-center transition" title="Zoho Blog LinkedIn">
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#0F65AF] hover:text-white flex items-center justify-center transition" title="TechPulse Blog LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </Link>
-              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#111111] hover:text-white flex items-center justify-center transition" title="Zoho Open Source GitHub">
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#111111] hover:text-white flex items-center justify-center transition" title="TechPulse Open Source GitHub">
                 <Github className="w-4 h-4" />
               </Link>
-              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="Zoho Video Engineering Series">
+              <Link to="/blog" className="w-8 h-8 rounded-md bg-[#27272A] hover:bg-[#E42528] hover:text-white flex items-center justify-center transition" title="TechPulse Video Engineering Series">
                 <Youtube className="w-4 h-4" />
               </Link>
             </div>
@@ -103,15 +103,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Zoho Suite (Internal Navigation - No External Redirects) */}
+          {/* TechPulse Suite (Internal Navigation - No External Redirects) */}
           <div>
             <h4 className="text-white font-bold mb-4 text-xs tracking-wider uppercase">Featured Architecture</h4>
             <ul className="space-y-2.5 text-xs">
-              <li><Link to="/blog?category=software-development" className="hover:text-white transition">Zoho CRM Platform</Link></li>
-              <li><Link to="/blog?category=cloud-computing" className="hover:text-white transition">Zoho Mail Core</Link></li>
-              <li><Link to="/blog?category=technology-innovation" className="hover:text-white transition">Workplace Systems</Link></li>
-              <li><Link to="/blog?category=web-and-mobile-app-development" className="hover:text-white transition">Creator Low-Code Engine</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition">Zoho One Engineering</Link></li>
+              <li><Link to="/blog?category=software-development" className="hover:text-white transition">Pulse CRM Platform</Link></li>
+              <li><Link to="/blog?category=cloud-computing" className="hover:text-white transition">Pulse Mail Engine</Link></li>
+              <li><Link to="/blog?category=technology-innovation" className="hover:text-white transition">Pulse Collaboration Suite</Link></li>
+              <li><Link to="/blog?category=web-and-mobile-app-development" className="hover:text-white transition">Pulse Low-Code Studio</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition">Pulse Unified Platform</Link></li>
             </ul>
           </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 mt-10 border-t border-[#27272A] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()}, Zoho Corporation Pvt. Ltd. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()}, TechPulse Technologies Pvt. Ltd. All Rights Reserved.</p>
           <div className="flex items-center gap-4 text-slate-400">
             <span className="flex items-center gap-1 text-slate-300">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" /> 100% Privacy-First Architecture

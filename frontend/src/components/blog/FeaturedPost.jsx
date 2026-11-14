@@ -82,7 +82,7 @@ export default function FeaturedPost({ posts = [] }) {
                   />
                   <div>
                     <h5 className="text-xs font-bold text-slate-900">{mainPost.author?.name}</h5>
-                    <p className="text-[11px] text-slate-500 font-medium">{mainPost.author?.title || 'Zoho Engineer'}</p>
+                    <p className="text-[11px] text-slate-500 font-medium">{mainPost.author?.title || 'TechPulse Architect'}</p>
                   </div>
                 </div>
 
