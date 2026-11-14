@@ -13,6 +13,7 @@ import {
   ExternalLink,
   Star,
   Layers,
+  FolderTree,
   Sparkles,
   User,
   TrendingUp,

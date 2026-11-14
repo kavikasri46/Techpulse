@@ -9,40 +9,16 @@ import {
   CheckCircle2,
   Eye,
   EyeOff,
-  Sparkles,
-  Layers,
-  Globe2,
   ShieldCheck,
   ArrowLeft,
-  BookOpen
+  Sparkles
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import TechPulseLogo from '../../components/common/TechPulseLogo';
 import SeoHead from '../../components/common/SeoHead';
-
-const DOMAINS = [
-  'Software Architecture & Clean Code',
-  'Cloud Fleet & Kubernetes Orchestration',
-  'Private AI & Autonomous LLM Agents',
-  'Zero-Trust Cybersecurity & Cryptography',
-  'Web & Offline-First Mobile Systems',
-  'Database Internals & Distributed Storage',
-  'Engineering Leadership & Culture',
-];
-
-const SAMPLE_AUTHORS = [
-  'Kavin Raj',
-  'Priya Devi',
-  'Aravind Kumar',
-  'Nithish Kumar',
-  'Harish Anand',
-  'Keerthana Raj',
-];
 
 export default function AdminRegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [domain, setDomain] = useState(DOMAINS[0]);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -73,10 +49,10 @@ export default function AdminRegisterPage() {
     setError('');
 
     if (!name.trim()) {
-      return setError('Please provide your full author or engineer name.');
+      return setError('Please provide your full administrator name.');
     }
     if (!email.trim()) {
-      return setError('Please enter your work email address.');
+      return setError('Please enter your administrator work email.');
     }
     if (password.length < 6) {
       return setError('Password must be at least 6 characters long.');
@@ -85,7 +61,7 @@ export default function AdminRegisterPage() {
       return setError('Passwords do not match. Please verify your password confirmation.');
     }
     if (!agreed) {
-      return setError('Please accept the editorial code of integrity.');
+      return setError('Please accept the administrator terms of service.');
     }
 
     setLoading(true);
@@ -101,151 +77,109 @@ export default function AdminRegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F5F0] text-stone-900 font-sans py-12 sm:py-16">
+    <div className="min-h-screen bg-[#FAF9F5] flex flex-col justify-center font-sans">
       <SeoHead
-        title="Apply as Contributor - TechPulse Engineering Collective"
-        description="Join our roster of engineering architects, systems researchers, and technical authors."
+        title="Admin Registration - TechPulse Editorial Studio"
+        description="Create your administrator account for the TechPulse publishing platform."
       />
 
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
-        
-        {/* Top Navigation */}
-        <div className="flex items-center justify-between mb-10 pb-6 border-b border-stone-200/80">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-stone-600 hover:text-stone-950 transition group"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
-            <span>Return to Publications</span>
-          </Link>
+      {/* Main Split-Screen Container */}
+      <div className="min-h-screen grid grid-cols-1 lg:grid-cols-12">
 
-          <Link to="/" className="flex items-center justify-center">
-            <TechPulseLogo />
-          </Link>
+        {/* ===================================================================== */}
+        {/* LEFT COLUMN: Editorial Architecture Photography (Clean Image, No Over-Text) */}
+        {/* ===================================================================== */}
+        <div className="hidden lg:flex lg:col-span-6 relative bg-stone-900 overflow-hidden flex-col justify-between p-12 xl:p-16 text-white">
+          {/* Distinct Warm Editorial Architectural Photo */}
+          <img
+            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80"
+            alt="Editorial Studio Space"
+            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.05] scale-105"
+          />
+          {/* Warm Vignette Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-black/40 to-stone-950/40" />
 
-          <Link
-            to="/signin"
-            className="text-xs font-semibold tracking-wider uppercase text-stone-800 hover:text-[#E42528] transition"
-          >
-            Already an Author? Sign In →
-          </Link>
-        </div>
-
-        {/* Masthead Header Banner */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-stone-800 text-[11px] font-bold tracking-[0.2em] uppercase border border-stone-200/90 shadow-2xs mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#E42528]" />
-            Author Fellowship & Contributor Guild
-          </span>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-stone-900 leading-[1.14] mb-4">
-            Join the TechPulse Engineering Collective
-          </h1>
-          <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl mx-auto">
-            Publish blueprints, distributed systems research, and high-scale architecture teardowns read by over 45,000 platform leaders and engineers.
-          </p>
-        </div>
-
-        {/* Two-Column Grid: Left Perks & Proof | Right Application Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
-          {/* =================================================================== */}
-          {/* LEFT COLUMN: Contributor Perks, Pillars & Author Social Proof (50%) */}
-          {/* =================================================================== */}
-          <div className="lg:col-span-6 space-y-6">
-            
-            {/* 3 Value Proposition Pillar Cards */}
-            <div className="space-y-4">
-              <div className="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-2xs flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
-                  <BookOpen className="w-5 h-5 text-[#E42528]" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-base font-bold text-stone-900 mb-1">
-                    Peer-Reviewed Blueprints
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Collaborate directly with senior staff engineers. Every architectural proposal and benchmark is verified for reproducibility before public release.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-2xs flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
-                  <Globe2 className="w-5 h-5 text-indigo-600" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-base font-bold text-stone-900 mb-1">
-                    Global Edge Syndication
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Blueprints are instantly distributed through our multi-region edge mesh across 180+ global points of presence with sub-50ms cache warming.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-stone-200/80 shadow-2xs flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-base font-bold text-stone-900 mb-1">
-                    Bespoke Author Profile & Analytics
-                  </h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                    Showcase your engineering thought leadership on a dedicated profile page with real-time view telemetry and reader bookmark counts.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Live Author Guild Showcase Box */}
-            <div className="bg-[#EBE7DF] rounded-2xl p-6 border border-stone-300/80">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-stone-700">
-                  Active Staff Author Roster
+          {/* Top Brand Tag */}
+          <div className="relative z-10 flex items-center justify-between">
+            <Link to="/" className="inline-flex items-center gap-2 group">
+              <span className="w-8 h-8 rounded-lg bg-[#E42528] text-white flex items-center justify-center font-serif font-black text-lg shadow-md group-hover:scale-105 transition-transform">
+                T
+              </span>
+              <div className="flex flex-col">
+                <span className="font-serif tracking-[0.25em] text-xs font-bold text-white uppercase">
+                  TechPulse
                 </span>
-                <span className="px-2 py-0.5 rounded-full bg-stone-900 text-white text-[10px] font-mono">
-                  20 Authors Active
+                <span className="text-[9px] tracking-[0.2em] uppercase text-stone-300 font-sans">
+                  Editorial Collective
                 </span>
               </div>
+            </Link>
 
-              {/* Sample Author Chips */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {SAMPLE_AUTHORS.map((authorName) => (
-                  <span
-                    key={authorName}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-stone-800 text-xs font-medium border border-stone-300/60 shadow-2xs"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    {authorName}
-                  </span>
-                ))}
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-stone-200 text-stone-600 text-xs font-medium">
-                  +14 more authors
-                </span>
-              </div>
-
-              <p className="text-xs text-stone-600 italic font-serif leading-relaxed border-t border-stone-300/60 pt-3">
-                "The finest engineering documentation is crafted by builders who have operated systems under heavy load."
-              </p>
-            </div>
-
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] text-stone-200 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              Unified Admin Portal
+            </span>
           </div>
 
-          {/* =================================================================== */}
-          {/* RIGHT COLUMN: Contributor Registration Form (50%)                  */}
-          {/* =================================================================== */}
-          <div className="lg:col-span-6 bg-white rounded-3xl p-8 sm:p-10 border border-stone-200/90 shadow-sm">
+          {/* Minimal Punchy Statement (Clean, No Cluttered Paragraphs) */}
+          <div className="relative z-10 my-auto py-10 max-w-lg">
+            <span className="inline-flex items-center gap-1.5 text-[10px] tracking-[0.25em] uppercase font-bold text-amber-300 mb-4 bg-white/10 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-white/10">
+              <Sparkles className="w-3 h-3 text-amber-300" />
+              Master Administrative Console
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.15] mb-5">
+              Architecting knowledge for the global engineering fleet.
+            </h1>
+            <p className="text-stone-300 text-sm xl:text-base leading-relaxed font-light">
+              One unified administrative dashboard for publications, author curation, real-time telemetry, and technical reviews.
+            </p>
+          </div>
+
+          {/* Bottom Security / Trust Pill */}
+          <div className="relative z-10 pt-6 border-t border-white/15 flex items-center justify-between text-xs text-stone-300 font-light">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>Full platform administrative privileges</span>
+            </div>
+            <span className="font-mono text-[11px] text-stone-400">v2.4 LTS</span>
+          </div>
+        </div>
+
+        {/* ===================================================================== */}
+        {/* RIGHT COLUMN: Clean Administrator Registration Card                   */}
+        {/* ===================================================================== */}
+        <div className="lg:col-span-6 flex flex-col justify-between p-6 sm:p-10 lg:p-14 xl:p-16 bg-[#FAF9F5] overflow-y-auto">
+          
+          {/* Top Bar Navigation */}
+          <div className="flex items-center justify-between mb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-stone-500 hover:text-stone-900 transition group"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
+              <span>Back to Site</span>
+            </Link>
+
+            <Link
+              to="/signin"
+              className="text-xs font-semibold tracking-wider uppercase text-stone-700 hover:text-[#E42528] transition"
+            >
+              Already Registered? Sign In →
+            </Link>
+          </div>
+
+          {/* Form Container */}
+          <div className="w-full max-w-md mx-auto my-auto py-4">
             
-            <div className="mb-6">
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E42528] mb-1.5 block">
-                Application Form
+            <div className="mb-8">
+              <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-[#E42528] mb-2">
+                Administrator Access
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Create Contributor Account
+                Create Admin Account
               </h2>
-              <p className="mt-1 text-xs sm:text-sm text-stone-600 font-normal">
-                Fill out the form below to initialize your staff author profile.
+              <p className="mt-1.5 text-xs sm:text-sm text-stone-600 font-normal">
+                Register as an overall administrator to access the editorial studio, publish blueprints, and curate authors.
               </p>
             </div>
 
@@ -253,7 +187,7 @@ export default function AdminRegisterPage() {
             {error && (
               <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-start gap-2.5 shadow-2xs animate-fadeIn">
                 <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#E42528] mt-0.5" />
-                <span>{error}</span>
+                <span className="leading-relaxed">{error}</span>
               </div>
             )}
 
@@ -271,16 +205,16 @@ export default function AdminRegisterPage() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g. Kavin Raj"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 focus:bg-white transition"
+                    placeholder="e.g. Nithish Kumar"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 transition"
                   />
                 </div>
               </div>
 
-              {/* Work Email */}
+              {/* Administrator Email */}
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
-                  Work / Contributor Email *
+                  Administrator Email *
                 </label>
                 <div className="relative">
                   <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -289,34 +223,13 @@ export default function AdminRegisterPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@company.com or name@techpulse.io"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 focus:bg-white transition"
+                    placeholder="admin@techpulse.io or your work email"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 transition"
                   />
                 </div>
               </div>
 
-              {/* Primary Technical Domain */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1.5">
-                  Primary Domain of Focus
-                </label>
-                <div className="relative">
-                  <Layers className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  <select
-                    value={domain}
-                    onChange={(e) => setDomain(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 focus:bg-white transition cursor-pointer"
-                  >
-                    {DOMAINS.map((d) => (
-                      <option key={d} value={d}>
-                        {d}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Password with Strength Meter */}
+              {/* Password */}
               <div>
                 <div className="flex items-center justify-between mb-1.5">
                   <label className="block text-xs font-semibold uppercase tracking-wider text-stone-700">
@@ -349,7 +262,7 @@ export default function AdminRegisterPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 focus:bg-white transition"
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 transition"
                   />
                 </div>
 
@@ -394,12 +307,12 @@ export default function AdminRegisterPage() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 focus:bg-white transition"
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border border-stone-200 text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-800 transition"
                   />
                 </div>
               </div>
 
-              {/* Agreement Checkbox */}
+              {/* Terms Checkbox */}
               <div className="pt-2">
                 <label className="flex items-start gap-2.5 cursor-pointer text-xs text-stone-600 select-none">
                   <input
@@ -409,23 +322,23 @@ export default function AdminRegisterPage() {
                     className="mt-0.5 rounded border-stone-300 text-stone-900 focus:ring-0 focus:ring-offset-0"
                   />
                   <span>
-                    I commit to uphold the TechPulse editorial code of technical integrity, objective benchmarks, and peer review.
+                    I confirm this administrator account will govern TechPulse publications in accordance with our editorial standards.
                   </span>
                 </label>
               </div>
 
-              {/* Submit Button */}
-              <div className="pt-3">
+              {/* Submit CTA */}
+              <div className="pt-2">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 rounded-xl bg-[#E42528] hover:bg-[#C71B1E] text-white text-xs font-semibold tracking-[0.16em] uppercase flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 disabled:opacity-50"
+                  className="w-full py-3.5 px-6 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold tracking-[0.16em] uppercase flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 disabled:opacity-50"
                 >
                   {loading ? (
-                    <span>Submitting Application...</span>
+                    <span>Creating Admin Account...</span>
                   ) : (
                     <>
-                      <span>Submit Contributor Application</span>
+                      <span>Register Administrator</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -433,21 +346,20 @@ export default function AdminRegisterPage() {
               </div>
             </form>
 
-            {/* Bottom Return / Sign In */}
-            <div className="mt-8 pt-6 border-t border-stone-200 text-center text-xs text-stone-500">
-              <span>Already an approved author or editor? </span>
+            {/* Bottom Sign In Link */}
+            <div className="mt-8 pt-6 border-t border-stone-200/80 text-center text-xs text-stone-500">
+              <span>Already have an admin account? </span>
               <Link to="/signin" className="font-semibold text-stone-900 hover:text-[#E42528] underline underline-offset-2 transition">
-                Sign in to your CMS Studio
+                Sign In to Studio
               </Link>
             </div>
-
           </div>
 
-        </div>
+          {/* Simple Bottom Footer */}
+          <div className="text-center text-[11px] text-stone-400 font-serif pt-6">
+            TechPulse Editorial Collective • Administrator Portal
+          </div>
 
-        {/* Footer Note */}
-        <div className="mt-16 text-center text-xs text-stone-400 font-serif">
-          TechPulse Engineering Collective • Dedicated to Technical Truth and Architectural Clarity
         </div>
 
       </div>
