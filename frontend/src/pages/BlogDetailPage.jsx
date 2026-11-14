@@ -181,7 +181,7 @@ export default function BlogDetailPage() {
               src={getUniquePostImage(post)}
               alt={post.title}
               onError={(e) => {
-                e.currentTarget.src = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80';
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80';
               }}
               className="w-full h-full object-cover"
             />

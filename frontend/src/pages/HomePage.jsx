@@ -82,7 +82,7 @@ export default function HomePage() {
     {
       title: 'Architecture',
       slug: 'software-development',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Cloud Fleet',

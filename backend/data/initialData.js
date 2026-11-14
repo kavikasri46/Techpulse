@@ -319,7 +319,7 @@ const initialPosts = [
     title: 'Clean Architecture in Enterprise Node.js: Lessons from the TechPulse Mail Core',
     slug: 'clean-architecture-in-enterprise-nodejs-lessons-from-techpulse-mail',
     shortDescription: 'How TechPulse decouples domain entities, business use cases, and persistence layers across high-throughput enterprise messaging systems.',
-    featuredImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80',
+    featuredImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_01',
     author: 'auth_01',
     tags: ['Node.js', 'Clean Architecture', 'TechPulse Engineering', 'System Design'],
@@ -663,7 +663,7 @@ spec:
     title: 'Mastering Micro-Frontends: Independent Delivery Across the TechPulse App Suite',
     slug: 'mastering-micro-frontends-independent-delivery-across-techpulse-app-suite',
     shortDescription: 'Module Federation, runtime composition, shared design systems, and avoiding common performance pitfalls across large frontend teams.',
-    featuredImage: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1400&q=80',
+    featuredImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_01',
     author: 'auth_08',
     tags: ['Micro Frontends', 'Webpack', 'React', 'Frontend Architecture'],
@@ -681,6 +681,151 @@ spec:
 <h2>Runtime vs Build-Time Integration</h2>
 <p>Modern micro-frontend platforms use <strong>Webpack Module Federation</strong> or native ESM dynamic imports to stitch independently deployed bundles together inside the client browser without full-page reloads.</p>
 `
+  }
+,
+{
+    "_id": "post_09",
+    "title": "Building High-Throughput REST & GraphQL APIs with Node.js and TypeScript",
+    "slug": "building-high-throughput-rest-graphql-apis-nodejs-typescript",
+    "shortDescription": "How TechPulse architects low-latency event-driven microservices using Node.js clustering, Fastify, and strict TypeScript types.",
+    "featuredImage": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_01",
+    "author": "auth_11",
+    "tags": [
+      "Node.js",
+      "TypeScript",
+      "GraphQL",
+      "Fastify",
+      "APIs"
+    ],
+    "readingTime": "5 min read",
+    "status": "published",
+    "isFeatured": true,
+    "views": 2840,
+    "publishedAt": "2026-11-10T11:00:00.000Z",
+    "seoTitle": "Building High-Throughput REST & GraphQL APIs with Node.js | TechPulse",
+    "metaDescription": "A practical architecture guide from TechPulse engineers on building sub-10ms Node.js and Fastify backend services.",
+    "content": "\n<h2>Why Node.js Continues to Excel in I/O Intensive Microservices</h2>\n<p>At TechPulse, our backend platform processes tens of thousands of simultaneous socket connections per second. While compile-to-binary languages like Rust or Go offer raw compute advantages, <strong>Node.js paired with Fastify and TypeScript</strong> delivers unbeatable developer agility and outstanding non-blocking asynchronous throughput.</p>\n\n<h2>Fastify vs Express: Eliminating Latency Bottlenecks</h2>\n<p>While Express remains popular, its internal middleware pipeline introduces measurable overhead under heavy load. By migrating critical API endpoints to Fastify, we achieved a <strong>2.8x increase in requests per second</strong> with predictable P99 latency below 12 milliseconds.</p>\n\n<pre><code class=\"language-typescript\">\nimport fastify from 'fastify';\nimport { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';\nimport { Type } from '@sinclair/typebox';\n\nconst server = fastify({ logger: true }).withTypeProvider<TypeBoxTypeProvider>();\n\n// High-speed validated route schema\nserver.get(\n  '/api/v1/telemetry/:clusterId',\n  {\n    schema: {\n      params: Type.Object({ clusterId: Type.String() }),\n      response: {\n        200: Type.Object({\n          status: Type.String(),\n          latencyMs: Type.Number(),\n          activeNodes: Type.Integer(),\n        }),\n      },\n    },\n  },\n  async (request, reply) => {\n    const { clusterId } = request.params;\n    return { status: 'healthy', latencyMs: 4.2, activeNodes: 64 };\n  }\n);\n</code></pre>\n\n<h2>Benchmark Summary</h2>\n<table>\n  <thead>\n    <tr>\n      <th>Framework</th>\n      <th>Requests / Sec</th>\n      <th>P99 Latency</th>\n      <th>Memory Footprint</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Express 4.x</td>\n      <td>18,400 req/s</td>\n      <td>48 ms</td>\n      <td>94 MB</td>\n    </tr>\n    <tr>\n      <td>Fastify (Node 22)</td>\n      <td>52,100 req/s</td>\n      <td>11 ms</td>\n      <td>68 MB</td>\n    </tr>\n  </tbody>\n</table>\n"
+  },
+  {
+    "_id": "post_10",
+    "title": "Vector Databases & Hybrid Search: Scaling Enterprise RAG Pipelines with Milvus",
+    "slug": "vector-databases-hybrid-search-scaling-rag-pipelines-milvus",
+    "shortDescription": "Architectural breakdown of our high-dimensional embedding index combining dense vectors with BM25 sparse lexical search for sub-15ms AI retrieval.",
+    "featuredImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_02",
+    "author": "auth_10",
+    "tags": [
+      "AI",
+      "Vector Database",
+      "RAG",
+      "Milvus",
+      "Machine Learning"
+    ],
+    "readingTime": "7 min read",
+    "status": "published",
+    "isFeatured": false,
+    "views": 3190,
+    "publishedAt": "2026-11-08T14:30:00.000Z",
+    "seoTitle": "Vector Databases & Hybrid Search: Enterprise RAG Architecture | TechPulse",
+    "metaDescription": "How TechPulse builds private retrieval-augmented generation architectures using Milvus vector databases and cross-encoder reranking.",
+    "content": "\n<h2>The Limits of Pure Dense Vector Search</h2>\n<p>Dense vector embeddings generated by models like <code>text-embedding-3-large</code> excel at semantic understanding. However, they frequently stumble when matching exact product identifiers, RFC codes, or specialized acronyms.</p>\n\n<p>To overcome this, TechPulse implemented a <strong>hybrid retrieval pipeline</strong> that blends dense vector cosine similarity with sparse BM25 token frequencies, normalized by reciprocal rank fusion (RRF).</p>\n\n<h2>Two-Stage Retrieval Architecture</h2>\n<ul>\n  <li><strong>Stage 1 (Retrieval):</strong> High-throughput approximate nearest neighbor (ANN) search across 100M+ vectors using HNSW indexing in Milvus.</li>\n  <li><strong>Stage 2 (Cross-Encoder Reranking):</strong> Top-100 candidates are rescored with a lightweight transformer to eliminate hallucination vectors before context injection.</li>\n</ul>\n"
+  },
+  {
+    "_id": "post_11",
+    "title": "PostgreSQL at Planetary Scale: Partitioning, Connection Pooling, and B-Tree Tuning",
+    "slug": "postgresql-planetary-scale-partitioning-connection-pooling-btree-tuning",
+    "shortDescription": "Lessons from operating petabyte-scale relational datastores without failover lag, using PgBouncer pooling, declarative partitioning, and index optimization.",
+    "featuredImage": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_06",
+    "author": "auth_07",
+    "tags": [
+      "PostgreSQL",
+      "Databases",
+      "Cloud Fleet",
+      "SQL",
+      "Performance"
+    ],
+    "readingTime": "8 min read",
+    "status": "published",
+    "isFeatured": true,
+    "views": 4210,
+    "publishedAt": "2026-11-06T08:45:00.000Z",
+    "seoTitle": "PostgreSQL at Planetary Scale: Tuning & Partitioning | TechPulse Blog",
+    "metaDescription": "Senior database engineers at TechPulse share hard-won techniques for scaling PostgreSQL with declarative partitioning and connection pooling.",
+    "content": "\n<h2>Overcoming the 100-Million Row Wall</h2>\n<p>PostgreSQL remains the gold standard for relational integrity. But when tables grow beyond 100 million rows, standard B-tree index traversal and VACUUM maintenance operations can trigger severe I/O thrashing.</p>\n\n<h2>Declarative Range Partitioning by Timestamp</h2>\n<p>By splitting write-heavy event tables into monthly physical partitions, our storage engines isolate write amplification to the active partition while older partitions become cold, read-only chunks suitable for aggressive compression.</p>\n"
+  },
+  {
+    "_id": "post_12",
+    "title": "Automated DevSecOps in CI/CD: Static Code Analysis, SBOM, and Container Hardening",
+    "slug": "automated-devsecops-cicd-static-analysis-sbom-container-hardening",
+    "shortDescription": "How we shift security left into the pull request lifecycle using automated SAST scanning, dynamic dependency vulnerability checks, and minimal scratch images.",
+    "featuredImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_05",
+    "author": "auth_12",
+    "tags": [
+      "Cybersecurity",
+      "DevSecOps",
+      "CI/CD",
+      "Docker",
+      "SBOM"
+    ],
+    "readingTime": "6 min read",
+    "status": "published",
+    "isFeatured": false,
+    "views": 2460,
+    "publishedAt": "2026-11-04T10:15:00.000Z",
+    "seoTitle": "Automated DevSecOps in Enterprise CI/CD Pipelines | TechPulse Blog",
+    "metaDescription": "Learn how TechPulse embeds automated security scanning, container hardening, and SBOM generation directly into deployment workflows.",
+    "content": "\n<h2>Why Perimeter Security Alone Fails</h2>\n<p>Modern software supply chains rely on thousands of open-source npm and pip modules. A single compromised transitive dependency can expose customer data long before an adversary touches your firewall.</p>\n\n<h2>The 3 Pillars of Shift-Left Security</h2>\n<ul>\n  <li><strong>Software Bill of Materials (SBOM):</strong> Cryptographically signed CycloneDX manifests generated on every release build.</li>\n  <li><strong>Distroless Scratch Images:</strong> Eliminating bash, curl, and package managers from production Docker containers to reduce attack surface by 92%.</li>\n  <li><strong>Automated Secret Detection:</strong> Git hooks preventing API keys or private tokens from ever entering commit history.</li>\n</ul>\n"
+  },
+  {
+    "_id": "post_13",
+    "title": "Real-Time Event Streaming with Apache Kafka and Flink: From CDC to Live Dashboards",
+    "slug": "real-time-event-streaming-apache-kafka-flink-cdc-dashboards",
+    "shortDescription": "Architecting an event-driven backbone processing 850,000 events/sec with Debezium change data capture, exactly-once stream processing, and windowed aggregation.",
+    "featuredImage": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_01",
+    "author": "auth_14",
+    "tags": [
+      "Kafka",
+      "Apache Flink",
+      "Event Driven",
+      "CDC",
+      "Distributed Systems"
+    ],
+    "readingTime": "7 min read",
+    "status": "published",
+    "isFeatured": false,
+    "views": 3780,
+    "publishedAt": "2026-11-02T16:00:00.000Z",
+    "seoTitle": "Real-Time Event Streaming with Apache Kafka & Flink | TechPulse",
+    "metaDescription": "A technical deep-dive into building high-throughput event-driven microservices with Kafka, Flink, and Debezium change data capture.",
+    "content": "\n<h2>Replacing Batch Polling with True Real-Time Streams</h2>\n<p>Traditional nightly ETL batches introduce lag and inconsistent state across microservices. At TechPulse, our event pipeline ingests transactional mutations directly from database binlogs via Debezium and broadcasts them across distributed Kafka clusters with sub-second propagation.</p>\n"
+  },
+  {
+    "_id": "post_14",
+    "title": "Optimizing Core Web Vitals at Scale: How We Cut LCP by 64% Across 10M Monthly Hits",
+    "slug": "optimizing-core-web-vitals-scale-how-we-cut-lcp-64-percent",
+    "shortDescription": "A forensic optimization manual on critical CSS inlining, font-display strategies, next-gen AVIF delivery, and edge server-side streaming.",
+    "featuredImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1400&q=80",
+    "category": "cat_03",
+    "author": "auth_13",
+    "tags": [
+      "Web Performance",
+      "Core Web Vitals",
+      "LCP",
+      "Frontend",
+      "CSS"
+    ],
+    "readingTime": "5 min read",
+    "status": "published",
+    "isFeatured": false,
+    "views": 2950,
+    "publishedAt": "2026-10-30T12:00:00.000Z",
+    "seoTitle": "Optimizing Core Web Vitals at Enterprise Scale | TechPulse Blog",
+    "metaDescription": "Discover the exact techniques TechPulse web engineers used to drop Largest Contentful Paint (LCP) from 2.9s to 0.95s globally.",
+    "content": "\n<h2>The Real-World Business Impact of Milliseconds</h2>\n<p>In high-traffic enterprise applications, every 100 milliseconds of page render delay directly erodes reader retention and search rank. We conducted an end-to-end performance audit targeting Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS).</p>\n"
   }
 ];
 

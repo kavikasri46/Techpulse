@@ -567,7 +567,7 @@ export default function AdminDashboardPage() {
                               src={postImg}
                               alt={post.title}
                               onError={(e) => {
-                                e.currentTarget.src = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80';
+                                e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80';
                               }}
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             />
