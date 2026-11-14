@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Lock, Mail, AlertCircle, Sparkles, Server, Check, Settings2 } from 'lucide-react';
+import { ArrowRight, Lock, Mail, AlertCircle, Server, Check, Settings2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { getApiBaseUrl, setCustomApiBaseUrl } from '../../services/api';
 import TechPulseLogo from '../../components/common/TechPulseLogo';
@@ -36,12 +36,6 @@ export default function AdminLoginPage() {
     }
   };
 
-  const fillDemoCredentials = () => {
-    setEmail('admin@techpulse.io');
-    setPassword('Admin@123');
-    setError('');
-  };
-
   const handleSaveServerUrl = (e) => {
     e.preventDefault();
     setCustomApiBaseUrl(serverUrl);
@@ -68,23 +62,6 @@ export default function AdminLoginPage() {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
         <div className="bg-white py-8 px-6 sm:px-10 rounded-2xl shadow-sm border border-[#E5E7EB]">
           
-          {/* Quick Demo Fill Helper */}
-          <div className="mb-6 p-3.5 rounded-lg bg-red-50 border border-red-200 flex items-center justify-between">
-            <div className="text-xs text-slate-800">
-              <span className="font-bold flex items-center gap-1 text-[#E42528]">
-                <Sparkles className="w-3.5 h-3.5 text-[#E42528]" /> Staff Evaluation Account:
-              </span>
-              <p className="font-mono text-[11px] text-slate-600 mt-0.5">admin@techpulse.io / Admin@123</p>
-            </div>
-            <button
-              type="button"
-              onClick={fillDemoCredentials}
-              className="px-2.5 py-1 text-xs font-bold rounded-md bg-[#E42528] text-white hover:bg-[#C71B1E] transition whitespace-nowrap shadow-2xs"
-            >
-              Auto Fill
-            </button>
-          </div>
-
           {error && (
             <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2.5 text-red-700 text-xs">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
@@ -104,7 +81,7 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@techpulse.io"
+                  placeholder="name@company.com"
                   className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#E42528] focus:border-[#E42528] transition"
                 />
               </div>
