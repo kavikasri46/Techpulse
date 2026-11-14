@@ -9,9 +9,7 @@ import {
   EyeOff,
   ShieldCheck,
   CheckCircle2,
-  ArrowLeft,
-  Sparkles,
-  Server
+  ArrowLeft
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import TechPulseLogo from '../../components/common/TechPulseLogo';
@@ -41,12 +39,6 @@ export default function AdminLoginPage() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillQuickDemo = (demoEmail, demoPass) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setError('');
   };
 
   return (
@@ -173,7 +165,7 @@ export default function AdminLoginPage() {
                   <span>{error}</span>
                 </div>
                 <p className="text-[11px] text-red-600/90 ml-6">
-                  Verify your email and password, or use the quick demo fill button below.
+                  Please verify your email/username and password.
                 </p>
               </div>
             )}
@@ -272,37 +264,8 @@ export default function AdminLoginPage() {
               </div>
             </form>
 
-            {/* Quick Demo Fill Shortcut Box */}
-            <div className="mt-8 pt-6 border-t border-stone-200/80">
-              <div className="bg-white rounded-xl p-3.5 border border-stone-200/90 shadow-2xs">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                    Quick Fill Credentials
-                  </span>
-                  <span className="text-[10px] text-stone-400">One-Click</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => fillQuickDemo('admin@techpulse.io', 'Admin@123')}
-                    className="flex-1 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-medium transition text-center"
-                  >
-                    Editor (admin)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => fillQuickDemo('nithh@techpulse.io', 'Admin@123')}
-                    className="flex-1 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-medium transition text-center"
-                  >
-                    Author (nithh)
-                  </button>
-                </div>
-              </div>
-            </div>
-
             {/* Bottom Footer Callout */}
-            <div className="mt-6 text-center text-xs text-stone-500">
+            <div className="mt-8 pt-6 border-t border-stone-200/80 text-center text-xs text-stone-500">
               <span>Looking to contribute technical blueprints? </span>
               <Link to="/signup" className="font-semibold text-stone-900 hover:text-[#E42528] underline underline-offset-2 transition">
                 Join the Contributor Collective
