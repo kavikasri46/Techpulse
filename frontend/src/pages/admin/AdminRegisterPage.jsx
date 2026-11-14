@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight, Lock, Mail, User, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import ZohoLogo from '../../components/common/ZohoLogo';
+import TechPulseLogo from '../../components/common/TechPulseLogo';
 import SeoHead from '../../components/common/SeoHead';
 
 export default function AdminRegisterPage() {
@@ -50,7 +50,7 @@ export default function AdminRegisterPage() {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-block mb-3">
-          <ZohoLogo size="large" />
+          <TechPulseLogo size="large" />
         </Link>
         <h2 className="mt-4 text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
           Create Staff Account

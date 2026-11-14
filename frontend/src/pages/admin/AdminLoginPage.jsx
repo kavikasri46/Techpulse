@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight, Lock, Mail, AlertCircle, Sparkles, Server, Check, Settings2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { getApiBaseUrl, setCustomApiBaseUrl } from '../../services/api';
-import ZohoLogo from '../../components/common/ZohoLogo';
+import TechPulseLogo from '../../components/common/TechPulseLogo';
 import SeoHead from '../../components/common/SeoHead';
 
 export default function AdminLoginPage() {
@@ -55,7 +55,7 @@ export default function AdminLoginPage() {
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-block mb-3">
-          <ZohoLogo size="large" />
+          <TechPulseLogo size="large" />
         </Link>
         <h2 className="mt-4 text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
           Editorial Staff Sign In

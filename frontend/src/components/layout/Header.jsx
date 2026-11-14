@@ -86,7 +86,7 @@ export default function Header({ onOpenSearch }) {
             })}
           </nav>
 
-          {/* Right Action Items matching zoho.com header */}
+          {/* Right Action Items */}
           <div className="flex items-center gap-3 sm:gap-4">
             {/* Search Trigger */}
             <button

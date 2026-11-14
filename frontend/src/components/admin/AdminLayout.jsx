@@ -10,7 +10,7 @@ import {
   Shield,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import ZohoLogo from '../common/ZohoLogo';
+import TechPulseLogo from '../common/TechPulseLogo';
 
 export default function AdminLayout() {
   const { user, logout } = useAuth();
@@ -38,7 +38,7 @@ export default function AdminLayout() {
             {/* Left Brand */}
             <div className="flex items-center gap-4">
               <Link to="/admin" className="flex items-center gap-2">
-                <ZohoLogo />
+                <TechPulseLogo />
                 <span className="text-xs uppercase font-extrabold tracking-wider bg-[#0F65AF] text-white px-2 py-0.5 rounded-sm">
                   CMS Studio
                 </span>
