@@ -1,9 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Calendar, ArrowRight, User, Bookmark, Share2 } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, Bookmark, Share2 } from 'lucide-react';
+
+const AVATAR_GRADIENTS = [
+  'from-rose-500 to-red-600',
+  'from-blue-500 to-indigo-600',
+  'from-emerald-500 to-teal-600',
+  'from-amber-500 to-orange-600',
+  'from-violet-500 to-purple-600',
+  'from-cyan-500 to-blue-600',
+  'from-fuchsia-500 to-pink-600',
+  'from-teal-500 to-emerald-600',
+];
+
+const getInitials = (name = '') => {
+  if (!name) return 'TP';
+  const clean = name.trim().split(/\s+/);
+  if (clean.length === 1) return clean[0].slice(0, 2).toUpperCase();
+  return (clean[0][0] + clean[clean.length - 1][0]).toUpperCase();
+};
+
+const getAvatarGradient = (name = '') => {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  const idx = Math.abs(hash) % AVATAR_GRADIENTS.length;
+  return AVATAR_GRADIENTS[idx];
+};
 
 export default function PostCard({ post }) {
   if (!post) return null;
+
+  const authorName = post.author?.name || 'TechPulse Contributor';
+  const initials = getInitials(authorName);
+  const gradient = getAvatarGradient(authorName);
 
   const publishedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -28,10 +57,7 @@ export default function PostCard({ post }) {
         />
         {/* Category Pill Tag */}
         {post.category && (
-          <span
-            className="absolute top-3 left-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-sm text-white shadow-sm"
-            style={{ backgroundColor: post.category.color || '#E42528' }}
-          >
+          <span className="absolute top-3 left-3 text-[11px] font-semibold tracking-wide px-3 py-1 rounded-full text-white bg-slate-900/80 backdrop-blur-md border border-white/15 shadow-xs">
             {post.category.name}
           </span>
         )}
@@ -42,19 +68,19 @@ export default function PostCard({ post }) {
         <div>
           {/* Metadata Row */}
           <div className="flex items-center gap-3 text-xs text-slate-500 mb-2.5 font-medium">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-slate-400" />
               {publishedDate}
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-slate-400" />
               {post.readingTime || '4 min read'}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-[#111111] group-hover:text-[#E42528] transition-colors line-clamp-2 leading-snug mb-2.5">
+          <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#E42528] transition-colors line-clamp-2 leading-snug mb-2.5">
             <Link to={`/blog/${post.slug}`}>{post.title}</Link>
           </h3>
 
@@ -66,21 +92,19 @@ export default function PostCard({ post }) {
 
         {/* Footer: Author & Read More */}
         <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
-              <User className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-2.5">
+            <div className={`w-7 h-7 rounded-full bg-gradient-to-tr ${gradient} text-white font-bold text-[10px] flex items-center justify-center shadow-2xs flex-shrink-0`}>
+              {initials}
             </div>
-            <div className="flex flex-col">
-              <span className="text-xs font-semibold text-slate-800 line-clamp-1">
-                {post.author?.name || 'TechPulse Staff'}
-              </span>
-            </div>
+            <span className="text-xs font-semibold text-slate-800 line-clamp-1">
+              {authorName}
+            </span>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
             <button
               type="button"
-              className="p-1 text-slate-400 hover:text-[#E42528] rounded-md transition"
+              className="p-1.5 text-slate-400 hover:text-[#E42528] rounded-lg hover:bg-slate-50 transition"
               title="Bookmark story"
               aria-label="Bookmark"
             >
@@ -88,7 +112,7 @@ export default function PostCard({ post }) {
             </button>
             <button
               type="button"
-              className="p-1 text-slate-400 hover:text-[#E42528] rounded-md transition"
+              className="p-1.5 text-slate-400 hover:text-[#E42528] rounded-lg hover:bg-slate-50 transition"
               title="Share story"
               aria-label="Share"
             >

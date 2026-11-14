@@ -3,6 +3,31 @@ import { Plus, Edit2, Trash2, Users, User, Mail, Twitter, Linkedin, Github, Aler
 import { authorService } from '../../services/api';
 import SeoHead from '../../components/common/SeoHead';
 
+const AVATAR_GRADIENTS = [
+  'from-rose-500 to-red-600',
+  'from-blue-500 to-indigo-600',
+  'from-emerald-500 to-teal-600',
+  'from-amber-500 to-orange-600',
+  'from-violet-500 to-purple-600',
+  'from-cyan-500 to-blue-600',
+  'from-fuchsia-500 to-pink-600',
+  'from-teal-500 to-emerald-600',
+];
+
+const getInitials = (name = '') => {
+  if (!name) return 'TP';
+  const clean = name.trim().split(/\s+/);
+  if (clean.length === 1) return clean[0].slice(0, 2).toUpperCase();
+  return (clean[0][0] + clean[clean.length - 1][0]).toUpperCase();
+};
+
+const getAvatarGradient = (name = '') => {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  const idx = Math.abs(hash) % AVATAR_GRADIENTS.length;
+  return AVATAR_GRADIENTS[idx];
+};
+
 export default function AdminAuthorsPage() {
   const [authors, setAuthors] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -127,10 +152,10 @@ export default function AdminAuthorsPage() {
 
         <button
           onClick={openCreateModal}
-          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs uppercase tracking-wider transition shadow-xs"
+          className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#E42528] hover:bg-[#C71B1E] text-white font-semibold text-xs tracking-wide transition shadow-sm"
         >
           <Plus className="w-4 h-4" />
-          <span>Add New Author</span>
+          <span>New Author</span>
         </button>
       </div>
 
@@ -146,12 +171,12 @@ export default function AdminAuthorsPage() {
         {authors.map((author) => (
           <div
             key={author._id}
-            className="bg-white rounded-2xl p-6 border border-slate-200 shadow-2xs flex flex-col justify-between"
+            className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-2xs hover:shadow-xs transition flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3.5 mb-4">
-                <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
-                  <User className="w-6 h-6" />
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${getAvatarGradient(author.name)} text-white font-bold text-sm flex items-center justify-center shadow-xs flex-shrink-0`}>
+                  {getInitials(author.name)}
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-900">{author.name}</h3>
