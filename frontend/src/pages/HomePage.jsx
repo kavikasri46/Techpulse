@@ -247,7 +247,7 @@ export default function HomePage() {
           </div>
 
           {/* ========================================================================= */}
-          {/* 2. DUAL HIGHLIGHT CARDS (Catalyst & Zia Agents as seen in screenshot)      */}
+          {/* 2. DUAL HIGHLIGHT CARDS (Catalyst & Pulse AI Studio)                       */}
           {/* ========================================================================= */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 pt-8 border-t border-[#E5E7EB]">
             
@@ -278,7 +278,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Zia Agents Card */}
+            {/* Pulse AI Studio Card */}
             <div className="rounded-2xl p-7 bg-[#FAF5FF] border border-[#E9D5FF] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
               <div>
                 <span className="inline-block text-[10px] uppercase font-black tracking-widest text-purple-700 bg-purple-100 px-2.5 py-1 rounded">

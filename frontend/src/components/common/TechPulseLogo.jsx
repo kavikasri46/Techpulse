@@ -33,3 +33,4 @@ export default function TechPulseLogo({ size = 'default', showBadge = true }) {
     </div>
   );
 }
+

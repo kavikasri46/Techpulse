@@ -17,7 +17,6 @@ export default function Header({ onOpenSearch }) {
   const navLinks = [
     { name: 'Blog', path: '/blog' },
     { name: 'Software Engineering', path: '/blog?category=software-development' },
-    { name: 'AI & Zia', path: '/blog?category=artificial-intelligence-machine-learning' },
     { name: 'Cloud Fleet', path: '/blog?category=cloud-computing' },
     { name: 'Cybersecurity', path: '/blog?category=cybersecurity' },
     { name: 'Innovation', path: '/blog?category=technology-innovation' },
