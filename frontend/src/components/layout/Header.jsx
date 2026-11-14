@@ -128,19 +128,18 @@ export default function Header({ onOpenSearch }) {
                 </button>
               </div>
             ) : (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5">
                 <Link
-                  to="/admin/login"
-                  className="p-2 text-stone-700 hover:text-stone-950 rounded-full hover:bg-stone-200/50 transition"
-                  title="Staff Portal Sign In"
+                  to="/signin"
+                  className="hidden sm:inline-flex items-center px-3 py-1.5 text-xs font-semibold tracking-wider uppercase text-stone-700 hover:text-stone-950 transition"
                 >
-                  <User className="w-4 h-4" />
+                  Sign In
                 </Link>
                 <Link
-                  to="/admin/login"
-                  className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white text-xs font-semibold tracking-wider uppercase transition-all duration-200"
+                  to="/signup"
+                  className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-stone-900 bg-stone-900 text-white hover:bg-[#E42528] hover:border-[#E42528] text-xs font-semibold tracking-wider uppercase transition-all duration-200 shadow-2xs"
                 >
-                  Staff Portal
+                  Sign Up
                 </Link>
               </div>
             )}
@@ -163,13 +162,22 @@ export default function Header({ onOpenSearch }) {
                 <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
               </Link>
             ))}
-            <Link
-              to="/admin/login"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs tracking-[0.15em] uppercase font-semibold text-[#E42528] py-2"
-            >
-              Staff Editorial Login →
-            </Link>
+            <div className="pt-2 border-t border-stone-200/60 flex flex-col gap-2">
+              <Link
+                to="/signin"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-xs tracking-[0.15em] uppercase font-semibold text-stone-800 hover:text-stone-950 py-1.5"
+              >
+                Editorial Studio Sign In →
+              </Link>
+              <Link
+                to="/signup"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-xs tracking-[0.15em] uppercase font-semibold text-[#E42528] py-1.5"
+              >
+                Apply as Contributor →
+              </Link>
+            </div>
           </div>
         </div>
       )}

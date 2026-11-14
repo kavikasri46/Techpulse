@@ -23,6 +23,7 @@ import SocialShare from '../components/blog/SocialShare';
 import RelatedPosts from '../components/blog/RelatedPosts';
 import RichArticleBody from '../components/blog/RichArticleBody';
 import SeoHead from '../components/common/SeoHead';
+import { getUniquePostImage } from '../utils/blogImages';
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -175,10 +176,13 @@ export default function BlogDetailPage() {
 
         {/* Featured Banner Image */}
         <div className="w-full max-w-[1500px] mx-auto mb-12">
-          <div className="aspect-[21/9] sm:aspect-[16/7] rounded-2xl overflow-hidden shadow-md border border-[#E5E7EB] bg-slate-900">
+          <div className="aspect-[21/9] sm:aspect-[16/7] rounded-2xl overflow-hidden shadow-xs border border-stone-200/80 bg-stone-900">
             <img
-              src={post.featuredImage}
+              src={getUniquePostImage(post)}
               alt={post.title}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80';
+              }}
               className="w-full h-full object-cover"
             />
           </div>

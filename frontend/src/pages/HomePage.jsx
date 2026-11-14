@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { postService, categoryService } from '../services/api';
 import SeoHead from '../components/common/SeoHead';
+import { getUniquePostImage } from '../utils/blogImages';
 
 // Curated avatar gradient palette for humanized author badges
 const AVATAR_GRADIENTS = [
@@ -76,65 +77,65 @@ export default function HomePage() {
     loadHomeData();
   }, []);
 
-  // 6 Domain category representations matching "Shop By Category" in AURA
+  // 6 Domain category representations matching "Shop By Category" in AURA (all unique photography)
   const domainCards = [
     {
       title: 'Architecture',
       slug: 'software-development',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Cloud Fleet',
       slug: 'cloud-computing',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Enterprise AI',
       slug: 'artificial-intelligence-machine-learning',
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Cybersecurity',
       slug: 'cybersecurity',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Mobile Systems',
       slug: 'web-and-mobile-app-development',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Telemetry & DevOps',
       slug: 'software-development',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80',
     },
   ];
 
-  // 4 Curated Blueprint Series matching "Curated Looks" in AURA
+  // 4 Curated Blueprint Series matching "Curated Looks" in AURA (all unique photography)
   const curatedSeries = [
     {
       title: 'Clean Architecture Microservices',
       category: 'Software Architecture',
       slug: 'clean-architecture-in-enterprise-nodejs-lessons-from-techpulse-mail',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Zero Trust Cloud Perimeter',
       category: 'Cybersecurity Fleet',
       slug: 'zero-trust-architecture-explained-practical-implementation-in-techpulse-cloud',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Private Enterprise Neural Models',
       category: 'AI & Inference',
       slug: 'privacy-first-ai-building-enterprise-llm-agents-without-selling-customer-data',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Kubernetes Multi-Cluster GitOps',
       category: 'Cloud Engineering',
       slug: 'mastering-kubernetes-multi-cluster-management-ebpf-service-meshes-techpulse',
-      image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80',
     },
   ];
 
@@ -330,12 +331,13 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* 4-Column Minimalist Cards */}
+        {/* 4-Column Minimalist Cards with guaranteed unique images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {latestPosts.slice(0, 4).map((post) => {
+          {latestPosts.slice(0, 4).map((post, idx) => {
             const authorName = post.author?.name || 'TechPulse Architect';
             const initials = getInitials(authorName);
             const gradient = getAvatarGradient(authorName);
+            const cardImg = getUniquePostImage(post, idx);
 
             return (
               <div
@@ -349,7 +351,7 @@ export default function HomePage() {
                     className="relative block aspect-[4/5] rounded-xl overflow-hidden bg-stone-100 mb-3.5"
                   >
                     <img
-                      src={post.featuredImage}
+                      src={cardImg}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />

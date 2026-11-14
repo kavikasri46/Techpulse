@@ -151,11 +151,11 @@ export default function Footer() {
               Platform
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-stone-600">
-              <li><Link to="/admin" className="hover:text-stone-950 transition">Editorial CMS Studio</Link></li>
-              <li><Link to="/admin/login" className="hover:text-stone-950 transition">Staff Sign In</Link></li>
-              <li><Link to="/admin/authors" className="hover:text-stone-950 transition">Author Profiles</Link></li>
+              <li><Link to="/signin" className="hover:text-stone-950 transition">Editorial Studio Sign In</Link></li>
+              <li><Link to="/signup" className="hover:text-[#E42528] transition font-semibold">Join Contributor Collective</Link></li>
+              <li><Link to="/admin" className="hover:text-stone-950 transition">CMS Studio Dashboard</Link></li>
+              <li><Link to="/admin/authors" className="hover:text-stone-950 transition">Tamil Nadu Author Roster</Link></li>
               <li><Link to="/blog" className="hover:text-stone-950 transition">All Publications</Link></li>
-              <li><Link to="/blog?category=industry-insights" className="hover:text-stone-950 transition">Engineering Leadership</Link></li>
             </ul>
           </div>
 
