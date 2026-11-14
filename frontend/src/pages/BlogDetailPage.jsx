@@ -10,7 +10,12 @@ import {
   Tag,
   ArrowLeft,
   ShieldCheck,
-  Building2
+  Building2,
+  User,
+  Mail,
+  Twitter,
+  Linkedin,
+  Github
 } from 'lucide-react';
 import { postService } from '../services/api';
 import TableOfContents from '../components/blog/TableOfContents';

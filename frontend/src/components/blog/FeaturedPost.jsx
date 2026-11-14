@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Sparkles, User, Bookmark } from 'lucide-react';
 
 export default function FeaturedPost({ posts = [] }) {
   if (!posts || posts.length === 0) return null;
@@ -75,23 +75,31 @@ export default function FeaturedPost({ posts = [] }) {
 
               <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={mainPost.author?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'}
-                    alt={mainPost.author?.name}
-                    className="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100"
-                  />
+                  <div className="w-9 h-9 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+                    <User className="w-4 h-4" />
+                  </div>
                   <div>
                     <h5 className="text-xs font-bold text-slate-900">{mainPost.author?.name}</h5>
                     <p className="text-[11px] text-slate-500 font-medium">{mainPost.author?.title || 'TechPulse Architect'}</p>
                   </div>
                 </div>
 
-                <Link
-                  to={`/blog/${mainPost.slug}`}
-                  className="inline-flex items-center gap-1 px-4 py-2 rounded-md bg-red-50 text-[#E42528] hover:bg-[#E42528] hover:text-white text-xs font-extrabold uppercase tracking-wide transition-all"
-                >
-                  Read Story <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    className="p-2 text-slate-400 hover:text-[#E42528] rounded-md transition"
+                    title="Bookmark story"
+                    aria-label="Bookmark"
+                  >
+                    <Bookmark className="w-4 h-4" />
+                  </button>
+                  <Link
+                    to={`/blog/${mainPost.slug}`}
+                    className="inline-flex items-center gap-1 px-4 py-2 rounded-md bg-red-50 text-[#E42528] hover:bg-[#E42528] hover:text-white text-xs font-extrabold uppercase tracking-wide transition-all"
+                  >
+                    Read Story <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -138,7 +146,12 @@ export default function FeaturedPost({ posts = [] }) {
               </div>
 
               <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                <span>By {post.author?.name}</span>
+                <span className="flex items-center gap-1.5 font-medium text-slate-700">
+                  <span className="w-5 h-5 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+                    <User className="w-3 h-3" />
+                  </span>
+                  {post.author?.name}
+                </span>
                 <Link
                   to={`/blog/${post.slug}`}
                   className="font-bold text-[#E42528] hover:text-[#C71B1E] flex items-center gap-1"

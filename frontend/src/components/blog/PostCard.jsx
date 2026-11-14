@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Calendar, ArrowRight } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, User, Bookmark, Share2 } from 'lucide-react';
 
 export default function PostCard({ post }) {
   if (!post) return null;
@@ -66,12 +66,10 @@ export default function PostCard({ post }) {
 
         {/* Footer: Author & Read More */}
         <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
-          <div className="flex items-center gap-2.5">
-            <img
-              src={post.author?.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'}
-              alt={post.author?.name || 'Author'}
-              className="w-7 h-7 rounded-full object-cover ring-1 ring-slate-200"
-            />
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
+              <User className="w-3.5 h-3.5" />
+            </div>
             <div className="flex flex-col">
               <span className="text-xs font-semibold text-slate-800 line-clamp-1">
                 {post.author?.name || 'TechPulse Staff'}
@@ -79,12 +77,30 @@ export default function PostCard({ post }) {
             </div>
           </div>
 
-          <Link
-            to={`/blog/${post.slug}`}
-            className="text-xs font-bold text-[#E42528] group-hover:text-[#C71B1E] flex items-center gap-1 transition"
-          >
-            Read <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex items-center gap-2.5">
+            <button
+              type="button"
+              className="p-1 text-slate-400 hover:text-[#E42528] rounded-md transition"
+              title="Bookmark story"
+              aria-label="Bookmark"
+            >
+              <Bookmark className="w-3.5 h-3.5" />
+            </button>
+            <button
+              type="button"
+              className="p-1 text-slate-400 hover:text-[#E42528] rounded-md transition"
+              title="Share story"
+              aria-label="Share"
+            >
+              <Share2 className="w-3.5 h-3.5" />
+            </button>
+            <Link
+              to={`/blog/${post.slug}`}
+              className="text-xs font-bold text-[#E42528] group-hover:text-[#C71B1E] flex items-center gap-1 transition ml-1"
+            >
+              Read <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </div>
     </article>
