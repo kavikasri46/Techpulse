@@ -39,7 +39,7 @@ export default function AdminLayout() {
             {/* Left Brand */}
             <div className="flex items-center gap-4">
               <Link to="/admin" className="flex items-center gap-2">
-                <TechPulseLogo />
+                <TechPulseLogo variant="dark" />
                 <span className="text-xs uppercase font-extrabold tracking-wider bg-[#0F65AF] text-white px-2 py-0.5 rounded-sm">
                   CMS Studio
                 </span>

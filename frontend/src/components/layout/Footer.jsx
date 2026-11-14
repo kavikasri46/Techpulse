@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block">
-              <TechPulseLogo />
+              <TechPulseLogo variant="dark" />
             </Link>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               TechPulse Corporation is an enterprise technology company providing scalable software systems for business collaboration and high-throughput cloud infrastructure.
