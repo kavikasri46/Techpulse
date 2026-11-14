@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, Menu, X, Shield, Globe, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import ZohoLogo from '../common/ZohoLogo';
+import TechPulseLogo from '../common/TechPulseLogo';
 
 export default function Header({ onOpenSearch }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
