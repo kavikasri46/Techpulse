@@ -112,7 +112,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Column: 2x3 Grid (FEATURED APPS as seen in zoho.com) */}
+            {/* Right Hero Column: 2x3 Grid (FEATURED APPS) */}
             <div className="lg:col-span-6 bg-[#FAFAFA] p-6 sm:p-8 rounded-2xl border border-[#E5E7EB] shadow-2xs">
               <div className="text-center mb-6">
                 <span className="text-[12px] uppercase font-black tracking-widest text-[#111111] block">

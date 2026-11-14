@@ -25,7 +25,7 @@ app.use(cors({
       /localhost/,
       /127\.0\.0\.1/,
       /\.vercel\.app$/,
-      /zoho/
+      /techpulse/
     ];
 
     const isAllowed = allowed.some((regex) => regex.test(origin));

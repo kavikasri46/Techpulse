@@ -4,7 +4,7 @@ const initialCategories = [
     name: 'Software Development',
     slug: 'software-development',
     description: 'Best practices, software engineering design patterns, system architecture, and modern programming paradigms.',
-    color: '#0F65AF' // Zoho Blue
+    color: '#0F65AF'
   },
   {
     _id: 'cat_02',
@@ -18,7 +18,7 @@ const initialCategories = [
     name: 'Web and Mobile App Development',
     slug: 'web-and-mobile-app-development',
     description: 'Modern frontend frameworks, cross-platform mobile apps, performance optimization, and responsive design.',
-    color: '#009639' // Zoho Green
+    color: '#009639'
   },
   {
     _id: 'cat_04',
@@ -32,7 +32,7 @@ const initialCategories = [
     name: 'Cybersecurity',
     slug: 'cybersecurity',
     description: 'Zero trust security, threat intelligence, vulnerability mitigation, and cryptographic protocols.',
-    color: '#E42528' // Zoho Red
+    color: '#E42528'
   },
   {
     _id: 'cat_06',
@@ -54,40 +54,40 @@ const initialAuthors = [
   {
     _id: 'auth_01',
     name: 'Alex Vance',
-    title: 'Principal Software Architect at Zoho',
-    bio: 'Alex Vance is a distributed systems engineer with 14+ years at Zoho building fault-tolerant cloud backends and developer platforms.',
+    title: 'Principal Software Architect at TechPulse',
+    bio: 'Alex Vance is a distributed systems engineer with 14+ years at TechPulse building fault-tolerant cloud backends and developer platforms.',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    email: 'alex.vance@zoho.com',
+    email: 'alex.vance@techpulse.io',
     socialLinks: {
-      twitter: 'https://twitter.com/zoho',
-      linkedin: 'https://linkedin.com/company/zoho',
-      github: 'https://github.com/zoho'
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
     }
   },
   {
     _id: 'auth_02',
     name: 'Priya Sharma',
-    title: 'Head of AI Research at Zoho',
-    bio: 'Priya leads Zoho AI & Machine Learning research initiatives focusing on private multi-agent models and zero-leakage inference pipelines.',
+    title: 'Head of AI Research at TechPulse',
+    bio: 'Priya leads TechPulse AI & Machine Learning research initiatives focusing on private multi-agent models and zero-leakage inference pipelines.',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
-    email: 'priya.sharma@zoho.com',
+    email: 'priya.sharma@techpulse.io',
     socialLinks: {
-      twitter: 'https://twitter.com/zoho',
-      linkedin: 'https://linkedin.com/company/zoho',
-      github: 'https://github.com/zoho'
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
     }
   },
   {
     _id: 'auth_03',
     name: 'Marcus Chen',
-    title: 'Lead Cloud Infrastructure Engineer at Zoho',
-    bio: 'Marcus oversees Zoho private datacenter fleets, Zero Trust enterprise perimeters, and large-scale multi-cluster Kubernetes deployments.',
+    title: 'Lead Cloud Infrastructure Engineer at TechPulse',
+    bio: 'Marcus oversees TechPulse cloud fleets, Zero Trust enterprise perimeters, and large-scale multi-cluster Kubernetes deployments.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    email: 'marcus.chen@zoho.com',
+    email: 'marcus.chen@techpulse.io',
     socialLinks: {
-      twitter: 'https://twitter.com/zoho',
-      linkedin: 'https://linkedin.com/company/zoho',
-      github: 'https://github.com/zoho'
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
     }
   }
 ];
@@ -95,25 +95,25 @@ const initialAuthors = [
 const initialPosts = [
   {
     _id: 'post_01',
-    title: 'Clean Architecture in Enterprise Node.js: Lessons from the Zoho Mail Engine',
-    slug: 'clean-architecture-in-enterprise-nodejs-lessons-from-zoho-mail',
-    shortDescription: 'How Zoho decouples domain entities, business use cases, and persistence layers across high-throughput enterprise messaging systems.',
+    title: 'Clean Architecture in Enterprise Node.js: Lessons from the TechPulse Mail Core',
+    slug: 'clean-architecture-in-enterprise-nodejs-lessons-from-techpulse-mail',
+    shortDescription: 'How TechPulse decouples domain entities, business use cases, and persistence layers across high-throughput enterprise messaging systems.',
     featuredImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_01',
     author: 'auth_01',
-    tags: ['Node.js', 'Clean Architecture', 'Zoho Engineering', 'System Design'],
+    tags: ['Node.js', 'Clean Architecture', 'TechPulse Engineering', 'System Design'],
     readingTime: '6 min read',
     status: 'published',
     isFeatured: true,
     views: 3420,
     publishedAt: new Date('2026-10-15T09:00:00Z'),
-    seoTitle: 'Clean Architecture in Enterprise Node.js | Zoho Blog',
-    metaDescription: 'A practical guide from Zoho engineers on applying Clean Architecture to decouple core business logic from database and transport adapters.',
+    seoTitle: 'Clean Architecture in Enterprise Node.js | TechPulse Blog',
+    metaDescription: 'A practical guide from TechPulse engineers on applying Clean Architecture to decouple core business logic from database and transport adapters.',
     content: `
 <h2>Why Architecture Matters in Long-Lived Enterprise Services</h2>
-<p>At Zoho, serving hundreds of millions of users requires architecture that outlives specific database technologies or web frameworks. Uncle Bob's <strong>Clean Architecture</strong> provides a disciplined blueprint to isolate high-value business logic from external infrastructure concerns.</p>
+<p>At TechPulse, serving hundreds of millions of users requires architecture that outlives specific database technologies or web frameworks. Uncle Bob's <strong>Clean Architecture</strong> provides a disciplined blueprint to isolate high-value business logic from external infrastructure concerns.</p>
 
-<p>In this engineering breakdown, we explain how Zoho services structure concentric layers to guarantee maximum testability and long-term maintainability.</p>
+<p>In this engineering breakdown, we explain how TechPulse services structure concentric layers to guarantee maximum testability and long-term maintainability.</p>
 
 <h2>The 4 Architectural Concentric Layers</h2>
 <p>Clean architecture structures the codebase such that dependencies point strictly inward toward pure business logic:</p>
@@ -181,7 +181,7 @@ export class PublishPostUseCase {
 </table>
 
 <blockquote>
-  "Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. At Zoho, our core focus is minimizing the lifetime complexity of our software."
+  "Good architecture makes the system easy to understand, easy to develop, easy to maintain, and easy to deploy. At TechPulse, our core focus is minimizing the lifetime complexity of our software."
 </blockquote>
 
 <h2>Key Takeaways</h2>
@@ -192,23 +192,23 @@ export class PublishPostUseCase {
     _id: 'post_02',
     title: 'Privacy-First AI: Building Enterprise LLM Agents Without Selling Customer Data',
     slug: 'privacy-first-ai-building-enterprise-llm-agents-without-selling-customer-data',
-    shortDescription: 'Zoho\'s zero-leakage AI manifesto: combining self-hosted neural weights, local vector embeddings, and strict tenant isolation.',
+    shortDescription: 'TechPulse\'s zero-leakage AI manifesto: combining self-hosted neural weights, local vector embeddings, and strict tenant isolation.',
     featuredImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_02',
     author: 'auth_02',
-    tags: ['AI', 'Privacy First', 'LLMs', 'Zoho AI'],
+    tags: ['AI', 'Privacy First', 'LLMs', 'TechPulse AI'],
     readingTime: '8 min read',
     status: 'published',
     isFeatured: true,
     views: 4890,
     publishedAt: new Date('2026-10-22T11:30:00Z'),
-    seoTitle: 'Privacy-First AI & Enterprise Agents | Zoho Blog',
-    metaDescription: 'Discover how Zoho builds enterprise autonomous AI agents inside self-hosted data centers without compromising customer privacy.',
+    seoTitle: 'Privacy-First AI & Enterprise Agents | TechPulse Blog',
+    metaDescription: 'Discover how TechPulse builds enterprise autonomous AI agents inside self-hosted data centers without compromising customer privacy.',
     content: `
 <h2>The Shift From Prompt-Response to Goal-Oriented Loops</h2>
 <p>Early iterations of large language models functioned primarily as static single-turn or conversational assistants. In contrast, <strong>autonomous AI agents</strong> combine reasoning models with stateful memory, external tool calling, and recursive reflection loops to pursue multi-step goals with minimal human intervention.</p>
 
-<p>At Zoho, privacy is our cornerstone: we run our AI models strictly on our private server clusters, ensuring customer queries never leave our cryptographic perimeter.</p>
+<p>At TechPulse, privacy is our cornerstone: we run our AI models strictly on our private server clusters, ensuring customer queries never leave our cryptographic perimeter.</p>
 
 <h2>The Four Pillars of Agentic Systems</h2>
 <ol>
@@ -220,7 +220,7 @@ export class PublishPostUseCase {
 
 <h2>The Agent Loop in Code</h2>
 <pre><code class="language-javascript">
-async function runZohoAgentLoop(goal, tools, privateMemory) {
+async function runTechPulseAgentLoop(goal, tools, privateMemory) {
   let state = { goal, stepsTaken: [], status: 'IN_PROGRESS' };
   
   while (state.status === 'IN_PROGRESS') {
@@ -231,7 +231,7 @@ async function runZohoAgentLoop(goal, tools, privateMemory) {
       return nextAction.summary;
     }
     
-    // Execute tool inside Zoho isolated sandbox
+    // Execute tool inside TechPulse isolated sandbox
     const toolResult = await executeTool(nextAction.tool, nextAction.params);
     state.stepsTaken.push({ action: nextAction, result: toolResult });
     
@@ -247,25 +247,25 @@ async function runZohoAgentLoop(goal, tools, privateMemory) {
   },
   {
     _id: 'post_03',
-    title: 'Zero Trust Architecture Explained: Practical Implementation in Zoho Private Cloud',
-    slug: 'zero-trust-architecture-explained-practical-implementation-in-zoho-cloud',
+    title: 'Zero Trust Architecture Explained: Practical Implementation in TechPulse Private Cloud',
+    slug: 'zero-trust-architecture-explained-practical-implementation-in-techpulse-cloud',
     shortDescription: 'Perimeter-based defense is obsolete. Learn the three core tenets of Zero Trust: verify explicitly, least privilege, and assume breach.',
     featuredImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_05',
     author: 'auth_03',
-    tags: ['Cybersecurity', 'Zero Trust', 'DevSecOps', 'Zoho Security'],
+    tags: ['Cybersecurity', 'Zero Trust', 'DevSecOps', 'TechPulse Security'],
     readingTime: '7 min read',
     status: 'published',
     isFeatured: true,
     views: 2980,
     publishedAt: new Date('2026-10-28T14:15:00Z'),
-    seoTitle: 'Zero Trust Architecture in Zoho Private Cloud | Zoho Blog',
+    seoTitle: 'Zero Trust Architecture in TechPulse Private Cloud | TechPulse Blog',
     metaDescription: 'A comprehensive engineering guide on migrating enterprise corporate networks to modern Zero Trust architecture.',
     content: `
 <h2>The Demise of the Castle-and-Moat Security Model</h2>
 <p>The traditional perimeter security model operated on a straightforward assumption: anything outside the corporate network was untrusted, while anything inside the VPN was implicitly trusted. The reality of hybrid work, multi-cloud hosting, and advanced persistent threats (APTs) has rendered this model obsolete.</p>
 
-<p><strong>Zero Trust</strong> operates under a radically different premise: <em>"Never trust, always verify."</em> At Zoho, every internal microservice request must be authenticated, authorized, and encrypted before granting access.</p>
+<p><strong>Zero Trust</strong> operates under a radically different premise: <em>"Never trust, always verify."</em> At TechPulse, every internal microservice request must be authenticated, authorized, and encrypted before granting access.</p>
 
 <h2>The 3 Core Pillars of Zero Trust</h2>
 <ul>
@@ -280,7 +280,7 @@ async function runZohoAgentLoop(goal, tools, privateMemory) {
     <tr>
       <th>Layer</th>
       <th>Legacy Approach</th>
-      <th>Zoho Zero Trust Approach</th>
+      <th>TechPulse Zero Trust Approach</th>
     </tr>
   </thead>
   <tbody>
@@ -305,9 +305,9 @@ async function runZohoAgentLoop(goal, tools, privateMemory) {
   },
   {
     _id: 'post_04',
-    title: 'Mastering Kubernetes Multi-Cluster Management & eBPF Service Meshes at Zoho Scale',
-    slug: 'mastering-kubernetes-multi-cluster-management-ebpf-service-meshes-zoho',
-    shortDescription: 'How Zoho platform teams use GitOps, ArgoCD, and Cilium eBPF to manage hundreds of Kubernetes clusters across global datacenters.',
+    title: 'Mastering Kubernetes Multi-Cluster Management & eBPF Service Meshes at TechPulse Scale',
+    slug: 'mastering-kubernetes-multi-cluster-management-ebpf-service-meshes-techpulse',
+    shortDescription: 'How TechPulse platform teams use GitOps, ArgoCD, and Cilium eBPF to manage hundreds of Kubernetes clusters across global datacenters.',
     featuredImage: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_06',
     author: 'auth_03',
@@ -317,7 +317,7 @@ async function runZohoAgentLoop(goal, tools, privateMemory) {
     isFeatured: false,
     views: 1890,
     publishedAt: new Date('2026-11-01T08:00:00Z'),
-    seoTitle: 'Kubernetes Multi-Cluster Management at Zoho Scale | Zoho Blog',
+    seoTitle: 'Kubernetes Multi-Cluster Management at TechPulse Scale | TechPulse Blog',
     metaDescription: 'Techniques for managing hundreds of Kubernetes clusters across global datacenters using GitOps and Cilium eBPF meshes.',
     content: `
 <h2>The Scaling Paradox of Kubernetes Fleets</h2>
@@ -344,7 +344,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/zoho/infra-manifests.git'
+        repoURL: 'https://github.com/techpulse/infra-manifests.git'
         targetRevision: HEAD
         path: monitoring/prometheus
       destination:
@@ -358,9 +358,9 @@ spec:
   },
   {
     _id: 'post_05',
-    title: 'Building Resilient Offline-First Mobile Apps with React Native at Zoho',
-    slug: 'building-resilient-offline-first-mobile-apps-with-react-native-zoho',
-    shortDescription: 'How Zoho builds mobile workplace apps that feel instantaneous, handle flaky networks seamlessly, and reconcile conflicts using CRDTs.',
+    title: 'Building Resilient Offline-First Mobile Apps with React Native at TechPulse',
+    slug: 'building-resilient-offline-first-mobile-apps-with-react-native-techpulse',
+    shortDescription: 'How TechPulse builds mobile workplace apps that feel instantaneous, handle flaky networks seamlessly, and reconcile conflicts using CRDTs.',
     featuredImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_03',
     author: 'auth_01',
@@ -370,7 +370,7 @@ spec:
     isFeatured: false,
     views: 2120,
     publishedAt: new Date('2026-11-03T10:00:00Z'),
-    seoTitle: 'Offline-First React Native Architecture | Zoho Blog',
+    seoTitle: 'Offline-First React Native Architecture | TechPulse Blog',
     metaDescription: 'A practical architecture for building offline-first mobile applications with React Native, WatermelonDB, and conflict resolution.',
     content: `
 <h2>The Offline Reality of Mobile Computing</h2>
@@ -388,8 +388,8 @@ spec:
   },
   {
     _id: 'post_06',
-    title: 'Quantum Computing Horizons: Preparing Zoho Cloud for Post-Quantum Cryptography',
-    slug: 'quantum-computing-horizons-preparing-zoho-cloud-post-quantum-cryptography',
+    title: 'Quantum Computing Horizons: Preparing Pulse Cloud for Post-Quantum Cryptography',
+    slug: 'quantum-computing-horizons-preparing-techpulse-cloud-post-quantum-cryptography',
     shortDescription: 'An objective analysis of logical qubits, Shor\'s algorithm threat modeling, and migrating enterprise PKI to NIST standardized algorithms.',
     featuredImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_04',
@@ -400,8 +400,8 @@ spec:
     isFeatured: false,
     views: 1750,
     publishedAt: new Date('2026-11-05T13:45:00Z'),
-    seoTitle: 'Preparing for Post-Quantum Cryptography | Zoho Blog',
-    metaDescription: 'How Zoho security architects are preparing cloud infrastructure for quantum-resistant lattice algorithms.',
+    seoTitle: 'Preparing for Post-Quantum Cryptography | TechPulse Blog',
+    metaDescription: 'How TechPulse security architects are preparing cloud infrastructure for quantum-resistant lattice algorithms.',
     content: `
 <h2>From Noisy Intermediate-Scale to Fault-Tolerant Logical Qubits</h2>
 <p>The quantum computing discourse has moved past raw physical qubit counts. The metric that truly matters in 2026 is <strong>logical qubit fidelity</strong> achieved through quantum error correction codes (QEC).</p>
@@ -416,9 +416,9 @@ spec:
   },
   {
     _id: 'post_07',
-    title: 'The Evolution of Engineering Leadership: How Architecture Shapes Culture at Zoho',
-    slug: 'the-evolution-of-engineering-leadership-how-architecture-shapes-culture-zoho',
-    shortDescription: 'Conway\'s Law states that organizations design systems that mirror their communication structures. Here is how Zoho builds high-velocity product teams.',
+    title: 'The Evolution of Engineering Leadership: How Architecture Shapes Culture at TechPulse',
+    slug: 'the-evolution-of-engineering-leadership-how-architecture-shapes-culture-techpulse',
+    shortDescription: 'Conway\'s Law states that organizations design systems that mirror their communication structures. Here is how TechPulse builds high-velocity product teams.',
     featuredImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_07',
     author: 'auth_01',
@@ -428,8 +428,8 @@ spec:
     isFeatured: false,
     views: 2640,
     publishedAt: new Date('2026-11-07T16:00:00Z'),
-    seoTitle: 'How Architecture Shapes Engineering Culture | Zoho Blog',
-    metaDescription: 'Exploring the symbiotic relationship between system architecture, team boundaries, and company culture at Zoho.',
+    seoTitle: 'How Architecture Shapes Engineering Culture | TechPulse Blog',
+    metaDescription: 'Exploring the symbiotic relationship between system architecture, team boundaries, and company culture at TechPulse.',
     content: `
 <h2>The Reverse Conway Maneuver</h2>
 <p>In 1967, computer programmer Melvin Conway formulated what is now known as Conway's Law: <em>"Any organization that designs a system will produce a design whose structure is a copy of the organization's communication structure."</em></p>
@@ -439,8 +439,8 @@ spec:
   },
   {
     _id: 'post_08',
-    title: 'Mastering Micro-Frontends: Independent Delivery Across the Zoho App Suite',
-    slug: 'mastering-micro-frontends-independent-delivery-across-zoho-app-suite',
+    title: 'Mastering Micro-Frontends: Independent Delivery Across the TechPulse App Suite',
+    slug: 'mastering-micro-frontends-independent-delivery-across-techpulse-app-suite',
     shortDescription: 'Module Federation, runtime composition, shared design systems, and avoiding common performance pitfalls across large frontend teams.',
     featuredImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_01',
@@ -451,8 +451,8 @@ spec:
     isFeatured: false,
     views: 1940,
     publishedAt: new Date('2026-11-09T09:15:00Z'),
-    seoTitle: 'Enterprise Micro-Frontends with Module Federation | Zoho Blog',
-    metaDescription: 'A complete guide to designing modular, team-autonomous micro-frontend architectures with Webpack Module Federation at Zoho.',
+    seoTitle: 'Enterprise Micro-Frontends with Module Federation | TechPulse Blog',
+    metaDescription: 'A complete guide to designing modular, team-autonomous micro-frontend architectures with Webpack Module Federation at TechPulse.',
     content: `
 <h2>When Does a Frontend Monolith Break Down?</h2>
 <p>When your frontend organization surpasses 50+ engineers across multiple feature squads, a single Git repository and monolithic deployment pipeline frequently becomes a major bottleneck. Deployments queue up, build times lengthen, and one team's syntax error blocks every other team's release.</p>
