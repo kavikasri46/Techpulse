@@ -7,7 +7,7 @@ const errorHandler = require('./middleware/errorHandler');
 const { getSitemap, getRobots } = require('./controllers/seoController');
 
 // Load environment configuration
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 // Connect to MongoDB
 connectDB();

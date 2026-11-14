@@ -82,7 +82,7 @@ export default function AdminRegisterPage() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Alex Vance"
+                  placeholder="e.g. Kavin Raj"
                   className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#E42528] focus:border-[#E42528] transition"
                 />
               </div>

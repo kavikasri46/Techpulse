@@ -233,7 +233,7 @@ export default function AdminAuthorsPage() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g. Alex Vance"
+                    placeholder="e.g. Kavin Raj"
                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
                   />
                 </div>

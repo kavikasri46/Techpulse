@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 
 let isConnected = false;
 
+const DEFAULT_MONGO_URI = 'mongodb+srv://kavikasri46_db_user:Kavika246@cluster0.ulib1zn.mongodb.net/zoho_blog?retryWrites=true&w=majority';
+
 /**
  * Connect to MongoDB with friendly diagnostic handling
  */
 const connectDB = async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/techpulse_blog';
+  const uri = process.env.MONGO_URI || DEFAULT_MONGO_URI;
 
   try {
     const conn = await mongoose.connect(uri, {
@@ -27,7 +29,7 @@ const connectDB = async () => {
 
 const getDbStatus = () => ({
   isConnected,
-  uri: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/techpulse_blog'
+  uri: process.env.MONGO_URI || DEFAULT_MONGO_URI
 });
 
 module.exports = { connectDB, getDbStatus };

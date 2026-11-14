@@ -53,11 +53,11 @@ const initialCategories = [
 const initialAuthors = [
   {
     _id: 'auth_01',
-    name: 'Alex Vance',
+    name: 'Kavin Raj',
     title: 'Principal Software Architect at TechPulse',
-    bio: 'Alex Vance is a distributed systems engineer with 14+ years at TechPulse building fault-tolerant cloud backends and developer platforms.',
+    bio: 'Kavin is a distributed systems architect with 14+ years building high-throughput event queues, fault-tolerant backends, and Clean Architecture microservices.',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    email: 'alex.vance@techpulse.io',
+    email: 'kavin.raj@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
       linkedin: 'https://linkedin.com/company/techpulse',
@@ -66,11 +66,11 @@ const initialAuthors = [
   },
   {
     _id: 'auth_02',
-    name: 'Priya Sharma',
-    title: 'Head of AI Research at TechPulse',
-    bio: 'Priya leads TechPulse AI & Machine Learning research initiatives focusing on private multi-agent models and zero-leakage inference pipelines.',
+    name: 'Priya Devi',
+    title: 'Head of AI & Machine Learning Research at TechPulse',
+    bio: 'Priya leads enterprise AI initiatives, researching zero-leakage neural inference pipelines, autonomous agent workflows, and private LLM fine-tuning.',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
-    email: 'priya.sharma@techpulse.io',
+    email: 'priya.devi@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
       linkedin: 'https://linkedin.com/company/techpulse',
@@ -79,11 +79,232 @@ const initialAuthors = [
   },
   {
     _id: 'auth_03',
-    name: 'Marcus Chen',
+    name: 'Aravind Kumar',
     title: 'Lead Cloud Infrastructure Engineer at TechPulse',
-    bio: 'Marcus oversees TechPulse cloud fleets, Zero Trust enterprise perimeters, and large-scale multi-cluster Kubernetes deployments.',
+    bio: 'Aravind oversees multi-region bare-metal cloud infrastructure, multi-cluster Kubernetes deployments, and Cilium eBPF mesh networks.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    email: 'marcus.chen@techpulse.io',
+    email: 'aravind.kumar@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_04',
+    name: 'Nithish Kumar',
+    title: 'Senior Distributed Systems Engineer at TechPulse',
+    bio: 'Nithish specializes in distributed consensus, Paxos/Raft storage engines, and ultra-low-latency real-time collaboration protocols.',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+    email: 'nithish.kumar@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_05',
+    name: 'Harish Anand',
+    title: 'Staff Frontend Architect at TechPulse',
+    bio: 'Harish leads frontend performance engineering, modern React architecture, and design system component libraries across enterprise suites.',
+    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80',
+    email: 'harish.anand@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_06',
+    name: 'Dharani Prakash',
+    title: 'Principal Security & Zero Trust Architect',
+    bio: 'Dharani designs defense-in-depth security architectures, post-quantum cryptography migrations, and mTLS microsegmentation.',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    email: 'dharani.prakash@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_07',
+    name: 'Vignesh Babu',
+    title: 'Lead Database Systems Engineer',
+    bio: 'Vignesh optimizes petabyte-scale distributed database engines, automated sharding topologies, and high-concurrency transaction pipelines.',
+    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80',
+    email: 'vignesh.babu@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_08',
+    name: 'Keerthana Raj',
+    title: 'Senior Site Reliability Engineer (SRE)',
+    bio: 'Keerthana focuses on continuous reliability, chaos engineering experiments, automated incident remediation, and 99.999% uptime guarantees.',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
+    email: 'keerthana.raj@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_09',
+    name: 'Surya Prakash',
+    title: 'Mobile Engineering Lead at TechPulse',
+    bio: 'Surya builds offline-first cross-platform mobile runtimes, local CRDT synchronization, and responsive mobile architecture.',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80',
+    email: 'surya.prakash@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_10',
+    name: 'Abinaya Selvam',
+    title: 'Machine Learning Systems Researcher',
+    bio: 'Abinaya develops private transformer quantization techniques, edge AI inference, and autonomous agent orchestration.',
+    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80',
+    email: 'abinaya.selvam@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_11',
+    name: 'Gokul Krishna',
+    title: 'Senior Backend Systems Developer',
+    bio: 'Gokul architects high-throughput microservices using Node.js, Go, and gRPC, specializing in event-driven streaming.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+    email: 'gokul.krishna@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_12',
+    name: 'Monisha Devi',
+    title: 'Cloud Security & Cryptography Specialist',
+    bio: 'Monisha researches hardware security modules (HSM), automated cryptographic key rotation, and compliance automation.',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80',
+    email: 'monisha.devi@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_13',
+    name: 'Ashwin Kumar',
+    title: 'Staff Web Platform Engineer',
+    bio: 'Ashwin crafts accessible, ultra-performant web interfaces, micro-frontends, and Core Web Vitals optimization strategies.',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+    email: 'ashwin.kumar@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_14',
+    name: 'Yazhini Karthik',
+    title: 'Event Streaming & Dataflow Architect',
+    bio: 'Yazhini designs real-time event streaming platforms, Apache Kafka topologies, and streaming stateful data pipelines.',
+    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80',
+    email: 'yazhini.karthik@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_15',
+    name: 'Santhosh Kumar',
+    title: 'Bare-Metal & Datacenter Fleet Specialist',
+    bio: 'Santhosh directs physical server orchestration, cooling efficiency in private data centers, and fiber network peering.',
+    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80',
+    email: 'santhosh.kumar@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_16',
+    name: 'Janani Prabhu',
+    title: 'VP of Enterprise Engineering at TechPulse',
+    bio: 'Janani leads engineering culture, architectural reviews, and developer productivity tools across all platform divisions.',
+    avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80',
+    email: 'janani.prabhu@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_17',
+    name: 'Dinesh Raj',
+    title: 'Observability & Metrics Platform Lead',
+    bio: 'Dinesh engineers distributed tracing pipelines, telemetry collectors, and automated anomaly detection dashboards.',
+    avatar: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=400&q=80',
+    email: 'dinesh.raj@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_18',
+    name: 'Pavithra Mani',
+    title: 'Data Platform & Lakehouse Engineer',
+    bio: 'Pavithra builds scalable data lakehouses, federated query engines, and privacy-preserving data analytics.',
+    avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    email: 'pavithra.mani@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_19',
+    name: 'Praveen Kumar',
+    title: 'Senior Cybersecurity Threat Analyst',
+    bio: 'Praveen leads threat emulation, penetration testing, automated static analysis security testing, and incident response.',
+    avatar: 'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=400&q=80',
+    email: 'praveen.kumar@techpulse.io',
+    socialLinks: {
+      twitter: 'https://twitter.com/techpulse',
+      linkedin: 'https://linkedin.com/company/techpulse',
+      github: 'https://github.com/techpulse'
+    }
+  },
+  {
+    _id: 'auth_20',
+    name: 'Tharun Selvan',
+    title: 'Low-Code Engine & Microservices Developer',
+    bio: 'Tharun specializes in visual workflow builders, sandboxed AST code execution, and modular serverless runtimes.',
+    avatar: 'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?auto=format&fit=crop&w=400&q=80',
+    email: 'tharun.selvan@techpulse.io',
     socialLinks: {
       twitter: 'https://twitter.com/techpulse',
       linkedin: 'https://linkedin.com/company/techpulse',
@@ -310,7 +531,7 @@ async function runTechPulseAgentLoop(goal, tools, privateMemory) {
     shortDescription: 'How TechPulse platform teams use GitOps, ArgoCD, and Cilium eBPF to manage hundreds of Kubernetes clusters across global datacenters.',
     featuredImage: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_06',
-    author: 'auth_03',
+    author: 'auth_04',
     tags: ['Kubernetes', 'Cloud Computing', 'GitOps', 'DevOps'],
     readingTime: '5 min read',
     status: 'published',
@@ -363,7 +584,7 @@ spec:
     shortDescription: 'How TechPulse builds mobile workplace apps that feel instantaneous, handle flaky networks seamlessly, and reconcile conflicts using CRDTs.',
     featuredImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_03',
-    author: 'auth_01',
+    author: 'auth_05',
     tags: ['React Native', 'Mobile Development', 'Offline First', 'Frontend'],
     readingTime: '6 min read',
     status: 'published',
@@ -393,7 +614,7 @@ spec:
     shortDescription: 'An objective analysis of logical qubits, Shor\'s algorithm threat modeling, and migrating enterprise PKI to NIST standardized algorithms.',
     featuredImage: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_04',
-    author: 'auth_02',
+    author: 'auth_06',
     tags: ['Quantum Computing', 'Emerging Tech', 'Cryptography', 'Innovation'],
     readingTime: '5 min read',
     status: 'published',
@@ -421,7 +642,7 @@ spec:
     shortDescription: 'Conway\'s Law states that organizations design systems that mirror their communication structures. Here is how TechPulse builds high-velocity product teams.',
     featuredImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_07',
-    author: 'auth_01',
+    author: 'auth_07',
     tags: ['Engineering Leadership', 'Culture', 'Conway Law', 'Career'],
     readingTime: '7 min read',
     status: 'published',
@@ -444,7 +665,7 @@ spec:
     shortDescription: 'Module Federation, runtime composition, shared design systems, and avoiding common performance pitfalls across large frontend teams.',
     featuredImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80',
     category: 'cat_01',
-    author: 'auth_02',
+    author: 'auth_08',
     tags: ['Micro Frontends', 'Webpack', 'React', 'Frontend Architecture'],
     readingTime: '5 min read',
     status: 'published',
