@@ -63,25 +63,31 @@ export default function AdminLoginPage() {
         <div className="bg-white py-8 px-6 sm:px-10 rounded-2xl shadow-sm border border-[#E5E7EB]">
           
           {error && (
-            <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-2.5 text-red-700 text-xs">
-              <AlertCircle className="w-4 h-4 flex-shrink-0" />
-              <span>{error}</span>
+            <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
+              <div className="flex items-center gap-2 font-semibold mb-1">
+                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                <span>{error}</span>
+              </div>
+              <p className="text-[11px] text-red-600/90 ml-6">
+                Tip: Default staff login is <span className="font-mono font-bold">admin@techpulse.io</span> (or username: <span className="font-mono font-bold">admin</span>) and password <span className="font-mono font-bold">Admin@123</span>.
+              </p>
             </div>
           )}
 
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                Staff Corporate Email
+                Staff Email or Username
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
-                  type="email"
+                  type="text"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@company.com"
+                  placeholder="admin@techpulse.io or admin"
+                  autoComplete="username"
                   className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#E42528] focus:border-[#E42528] transition"
                 />
               </div>
