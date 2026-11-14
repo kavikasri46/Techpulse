@@ -41,8 +41,9 @@ export default function AdminLayout() {
             <div className="flex items-center gap-4">
               <Link to="/admin" className="flex items-center gap-2.5 group">
                 <TechPulseLogo variant="dark" />
-                <span className="hidden sm:inline-block text-[11px] font-medium tracking-wide bg-slate-800 text-slate-300 border border-slate-700/80 px-2 py-0.5 rounded-md">
-                  Editorial Studio
+                <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide bg-slate-800 text-slate-200 border border-slate-700/80 px-2.5 py-0.5 rounded-full shadow-2xs">
+                  <Sparkles className="w-3 h-3 text-[#E42528]" />
+                  <span>Editorial Studio</span>
                 </span>
               </Link>
 
