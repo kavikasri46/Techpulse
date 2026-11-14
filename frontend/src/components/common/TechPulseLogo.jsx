@@ -2,19 +2,26 @@ import React from 'react';
 
 /**
  * TechPulse Brand Logo Component
- * Sleek modern tech-crest emblem + TECHPULSE wordmark + Blog tag
+ * Sleek modern TechPulse Red pulse emblem + TECHPULSE wordmark + Blog badge
  */
 export default function TechPulseLogo({ size = 'default', showBadge = true }) {
   const isLarge = size === 'large';
 
   return (
     <div className="flex items-center gap-3 select-none group cursor-pointer">
-      {/* Dynamic 4-element energetic pulse mark */}
-      <div className="flex items-center -space-x-1.5 relative">
-        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#E42528] -rotate-6 transform transition-transform group-hover:rotate-0 shadow-2xs`} />
-        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#009639] rotate-3 transform transition-transform group-hover:rotate-0 shadow-2xs`} />
-        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#0F65AF] -rotate-3 transform transition-transform group-hover:rotate-0 shadow-2xs`} />
-        <div className={`${isLarge ? 'w-5 h-7' : 'w-4 h-6'} rounded-md border-3 border-[#FFC600] rotate-6 transform transition-transform group-hover:rotate-0 shadow-2xs`} />
+      {/* Sleek TechPulse Red Emblem */}
+      <div className={`${isLarge ? 'w-10 h-10' : 'w-8 h-8'} rounded-xl bg-gradient-to-tr from-[#C71B1E] to-[#E42528] flex items-center justify-center text-white shadow-sm shadow-red-500/20 transform transition-transform group-hover:scale-105`}>
+        <svg
+          className={`${isLarge ? 'w-5 h-5' : 'w-4 h-4'}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 12h4l3-7 4 14 3-7h4" />
+        </svg>
       </div>
 
       {/* Brand Wordmark & Engineering Badge */}
@@ -33,4 +40,3 @@ export default function TechPulseLogo({ size = 'default', showBadge = true }) {
     </div>
   );
 }
-
