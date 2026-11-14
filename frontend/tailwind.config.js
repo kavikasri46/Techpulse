@@ -51,8 +51,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Puvi', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['Merriweather', 'Georgia', 'serif']
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Merriweather', 'Georgia', 'serif']
       }
     },
   },

@@ -94,10 +94,10 @@ export default function BlogDetailPage() {
     : 'Recently';
 
   return (
-    <article className="py-10 bg-[#FAFAFB]">
+    <article className="py-12 bg-[#FAF9F5] min-h-screen">
       {/* Dynamic SEO Tags & JSON-LD Structured Data */}
       <SeoHead
-        title={`${post.seoTitle || post.title} - TechPulse Blog`}
+        title={`${post.seoTitle || post.title} - TechPulse Engineering`}
         description={post.metaDescription || post.shortDescription}
         image={post.featuredImage}
         article={post}
@@ -106,68 +106,67 @@ export default function BlogDetailPage() {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
         
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6 uppercase tracking-wider">
-          <Link to="/" className="hover:text-[#E42528] transition">TechPulse</Link>
+        <nav className="flex items-center gap-2 text-xs font-medium text-stone-500 mb-6 uppercase tracking-widest">
+          <Link to="/" className="hover:text-stone-900 transition">TechPulse</Link>
           <span>/</span>
-          <Link to="/blog" className="hover:text-[#E42528] transition">Blog</Link>
+          <Link to="/blog" className="hover:text-stone-900 transition">Fleet</Link>
           <span>/</span>
           <Link
             to={`/blog?category=${post.category?.slug}`}
-            className="text-[#E42528] font-bold hover:underline transition"
+            className="text-[#E42528] font-semibold hover:underline transition"
           >
-            {post.category?.name || 'Technology'}
+            {post.category?.name || 'Architecture'}
           </Link>
         </nav>
 
         {/* Article Header Container */}
-        <div className="w-full max-w-[1400px] mx-auto mb-8">
+        <div className="w-full max-w-[1400px] mx-auto mb-10">
           {/* Category Badge */}
           {post.category && (
             <span
-              className="inline-block text-xs uppercase font-extrabold tracking-wider px-3.5 py-1 rounded-sm text-white shadow-2xs mb-4"
-              style={{ backgroundColor: post.category.color || '#E42528' }}
+              className="inline-block text-[11px] uppercase font-semibold tracking-widest px-3.5 py-1 rounded-full text-stone-800 bg-stone-200/80 mb-5"
             >
               {post.category.name}
             </span>
           )}
 
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#111111] tracking-tight leading-[1.18] mb-6">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-stone-900 tracking-tight leading-[1.15] mb-6">
             {post.title}
           </h1>
 
           {/* Subtitle / Excerpt */}
-          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal mb-8">
+          <p className="font-serif text-lg sm:text-xl text-stone-600 leading-relaxed font-normal mb-8">
             {post.shortDescription}
           </p>
 
           {/* Author Metadata Row */}
-          <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-[#E5E7EB] bg-white px-4 rounded-xl">
+          <div className="flex flex-wrap items-center justify-between gap-4 py-4 px-5 rounded-2xl bg-white border border-stone-200/80 shadow-2xs">
             {/* Author Info */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 flex items-center justify-center text-[#E42528] flex-shrink-0">
-                <User className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-red-600 text-white font-bold text-xs flex items-center justify-center flex-shrink-0 shadow-2xs">
+                {post.author?.name ? post.author.name.trim().charAt(0) : 'T'}
               </div>
               <div>
-                <h4 className="text-sm font-bold text-slate-900">{post.author?.name}</h4>
-                <p className="text-xs text-slate-500 font-medium">{post.author?.title || 'Engineer at TechPulse'}</p>
+                <h4 className="text-sm font-semibold text-stone-900">{post.author?.name}</h4>
+                <p className="text-xs text-stone-500 font-normal">{post.author?.title || 'TechPulse Platform Architect'}</p>
               </div>
             </div>
 
             {/* Reading Details & Date */}
-            <div className="flex items-center gap-4 text-xs font-semibold text-slate-500">
+            <div className="flex items-center gap-4 text-xs font-medium text-stone-500">
               <span className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                <Calendar className="w-3.5 h-3.5 text-stone-400" />
                 {publishedDate}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-slate-400" />
+                <Clock className="w-3.5 h-3.5 text-stone-400" />
                 {post.readingTime}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <Eye className="w-3.5 h-3.5 text-slate-400" />
+                <Eye className="w-3.5 h-3.5 text-stone-400" />
                 {post.views} views
               </span>
             </div>

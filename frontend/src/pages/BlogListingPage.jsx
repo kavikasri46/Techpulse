@@ -105,88 +105,99 @@ export default function BlogListingPage() {
   const currentCategoryObj = categories.find((c) => c.slug === categoryParam);
 
   return (
-    <div className="py-10 bg-[#FAFAFB]">
+    <div className="py-12 bg-[#FAF9F5] min-h-screen">
       <SeoHead
-        title={currentCategoryObj ? `${currentCategoryObj.name} Articles - TechPulse Blog` : 'All Technical Articles - TechPulse Blog'}
+        title={currentCategoryObj ? `${currentCategoryObj.name} - TechPulse Engineering` : 'All Publications - TechPulse Engineering'}
         description={
           currentCategoryObj
             ? currentCategoryObj.description
-            : 'Explore all published engineering tutorials, system architecture blueprints, and technology insights from TechPulse Engineering.'
+            : 'Explore all published engineering blueprints, system architecture patterns, and technology insights from TechPulse platform engineers.'
         }
       />
 
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
         
         {/* Header Breadcrumb & Title */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-            <Link to="/" className="hover:text-[#E42528] transition">TechPulse</Link>
+        <div className="mb-10">
+          <div className="flex items-center gap-2 text-xs font-medium text-stone-500 uppercase tracking-widest mb-3">
+            <Link to="/" className="hover:text-stone-900 transition">TechPulse</Link>
             <span>/</span>
-            <Link to="/blog" className="hover:text-[#E42528] transition">Blog</Link>
+            <Link to="/blog" className="hover:text-stone-900 transition">Fleet</Link>
             <span>/</span>
-            <span className="text-[#E42528] font-bold">
+            <span className="text-[#E42528] font-semibold">
               {currentCategoryObj ? currentCategoryObj.name : 'All Stories'}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            {currentCategoryObj ? currentCategoryObj.name : 'TechPulse Engineering & Technical Articles'}
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
+            {currentCategoryObj ? currentCategoryObj.name : 'Engineering Publications'}
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+          <p className="mt-2.5 text-sm sm:text-base text-stone-600 max-w-2xl leading-relaxed font-normal">
             {currentCategoryObj
               ? currentCategoryObj.description
-              : 'Browse our full library of software architecture case studies, DevOps manuals, zero-trust cloud infrastructure, and privacy-first AI insights.'}
+              : 'Browse our full catalog of software architecture case studies, DevOps manuals, zero-trust cloud infrastructure, and private AI research.'}
           </p>
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-[#E5E7EB] shadow-2xs mb-8 space-y-4">
+        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-stone-200/80 shadow-2xs mb-10 space-y-4">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             
             {/* Keyword Search Form */}
             <form onSubmit={handleSearchSubmit} className="relative w-full md:w-96">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 placeholder="Search articles, keywords, tags..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E42528] focus:bg-white transition"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-900/10 focus:border-stone-400 focus:bg-white transition"
               />
             </form>
 
             {/* Sort Dropdown & Count */}
             <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
-              <span className="text-xs font-bold text-slate-500">
-                {totalCount} {totalCount === 1 ? 'Article' : 'Articles'}
+              <span className="text-xs font-medium text-stone-500">
+                Showing <strong className="text-stone-900">{totalCount}</strong> publications
               </span>
 
-              <div className="flex items-center gap-2">
-                <label htmlFor="sort" className="text-xs text-slate-500 whitespace-nowrap font-medium">
-                  Sort:
-                </label>
-                <select
-                  id="sort"
-                  value={sortParam}
-                  onChange={handleSortChange}
-                  aria-label="Sort articles"
-                  className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#E42528]"
-                >
-                  <option value="latest">Latest Published</option>
-                  <option value="popular">Most Popular</option>
-                  <option value="oldest">Oldest First</option>
-                </select>
-              </div>
+              <select
+                value={sortParam}
+                onChange={handleSortChange}
+                className="px-3.5 py-2 rounded-xl bg-stone-50 border border-stone-200 text-xs font-medium text-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-900/10 transition cursor-pointer"
+              >
+                <option value="latest">Latest Releases</option>
+                <option value="popular">Most Read</option>
+                <option value="title">Alphabetical</option>
+              </select>
             </div>
           </div>
 
-          {/* Category Pills Strip */}
-          <div className="pt-3 border-t border-slate-100">
-            <CategoryPills
-              categories={categories}
-              selectedCategory={categoryParam}
-              onSelectCategory={handleCategorySelect}
-            />
+          {/* Category Quick Chips */}
+          <div className="pt-2 border-t border-stone-100 flex items-center gap-2 overflow-x-auto pb-1">
+            <button
+              onClick={() => handleCategorySelect('')}
+              className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+                !categoryParam
+                  ? 'bg-stone-900 text-white font-semibold'
+                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              }`}
+            >
+              All Topics
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat._id}
+                onClick={() => handleCategorySelect(cat.slug)}
+                className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+                  categoryParam === cat.slug
+                    ? 'bg-stone-900 text-white font-semibold'
+                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
           </div>
         </div>
 
