@@ -13,7 +13,7 @@ export default function Header({ onOpenSearch }) {
   const searchParams = new URLSearchParams(location.search);
   const currentCategory = searchParams.get('category');
 
-  // Navigation items matching Zoho official menu + Zoho Blog topics
+  // Navigation items matching official menu + Blog topics
   const navLinks = [
     { name: 'Blog', path: '/blog' },
     { name: 'Software Engineering', path: '/blog?category=software-development' },
@@ -44,9 +44,9 @@ export default function Header({ onOpenSearch }) {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-24">
         <div className="flex items-center justify-between h-20">
           
-          {/* Zoho Logo */}
+          {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <ZohoLogo />
+            <TechPulseLogo />
           </Link>
 
           {/* Desktop Nav Links with prominent color change on click */}
